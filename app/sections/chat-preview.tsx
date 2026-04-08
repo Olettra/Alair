@@ -2,6 +2,7 @@
 
 import { ScrollReveal } from "../components/animated";
 import { motion } from "motion/react";
+import { useRef, useEffect } from "react";
 
 type Message = {
   type: "ai" | "user";
@@ -211,7 +212,53 @@ const screen2: Message[] = [
   },
 ];
 
+function useAutoScroll() {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const mq = window.matchMedia("(min-width: 640px)");
+    if (mq.matches) return;
+
+    let idx = 0;
+    const children = el.children;
+    const count = children.length;
+    let timer: ReturnType<typeof setInterval>;
+    let touched = false;
+
+    const start = () => {
+      timer = setInterval(() => {
+        if (touched) return;
+        idx = (idx + 1) % count;
+        children[idx].scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+          inline: "center",
+        });
+      }, 3000);
+    };
+
+    const onTouch = () => {
+      touched = true;
+      clearInterval(timer);
+    };
+
+    el.addEventListener("touchstart", onTouch, { passive: true, once: true });
+    start();
+
+    return () => {
+      clearInterval(timer);
+      el.removeEventListener("touchstart", onTouch);
+    };
+  }, []);
+
+  return ref;
+}
+
 export function ChatPreview() {
+  const scrollRef = useAutoScroll();
+
   return (
     <section className="py-24 sm:py-32">
       <div className="px-6 sm:px-12 lg:px-20 mb-14">
@@ -226,7 +273,7 @@ export function ChatPreview() {
       </div>
 
       <ScrollReveal delay={0.05}>
-        <div className="flex gap-6 overflow-x-auto px-6 pb-6 sm:px-12 lg:px-20 sm:gap-10 sm:justify-center snap-x snap-mandatory scrollbar-hide">
+        <div ref={scrollRef} className="flex gap-6 overflow-x-auto px-6 pb-6 sm:px-12 lg:px-20 sm:gap-10 sm:justify-center snap-x snap-mandatory scrollbar-hide">
           <div className="snap-center">
             <ChatScreen subtitle="getting to know you" messages={screen1} />
           </div>
