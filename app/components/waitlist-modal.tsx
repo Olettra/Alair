@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion } from "motion/react";
-import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useRef, useState, type ReactNode, type FormEvent } from "react";
 import { Button } from "./button";
 
 type WaitlistContextType = {
@@ -16,9 +16,13 @@ export function useWaitlist() {
 
 export function WaitlistProvider({ children }: { children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const open = useCallback(() => setIsOpen(true), []);
+  const open = useCallback(() => {
+    setStatus("idle");
+    setIsOpen(true);
+  }, []);
   const close = useCallback(() => setIsOpen(false), []);
 
   useEffect(() => {
@@ -28,12 +32,33 @@ export function WaitlistProvider({ children }: { children: ReactNode }) {
     };
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
-    setTimeout(() => inputRef.current?.focus(), 100);
+    if (status === "idle") setTimeout(() => inputRef.current?.focus(), 100);
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = "";
     };
-  }, [isOpen, close]);
+  }, [isOpen, close, status]);
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("submitting");
+    const form = e.currentTarget;
+    try {
+      const res = await fetch("https://formspree.io/f/mlgovgdp", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
+      });
+      if (res.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  }
 
   return (
     <WaitlistContext.Provider value={{ open }}>
@@ -70,33 +95,87 @@ export function WaitlistProvider({ children }: { children: ReactNode }) {
                 </svg>
               </button>
 
-              <h2 className="font-serif text-[clamp(24px,4vw,32px)] font-normal leading-[1.15] tracking-tight mb-2">
-                Join the waitlist
-              </h2>
-              <p className="text-sm text-text-dim font-light mb-8">
-                We&apos;ll notify you when your spot opens in Minnesota.
-              </p>
+              <AnimatePresence mode="wait">
+                {status === "success" ? (
+                  <motion.div
+                    key="success"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ duration: 0.25, ease: "easeOut" }}
+                    className="flex flex-col items-center py-6 text-center"
+                  >
+                    <motion.div
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ type: "spring", stiffness: 300, damping: 20, delay: 0.1 }}
+                      className="mb-5 flex h-14 w-14 items-center justify-center rounded-full bg-text"
+                    >
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="text-bg">
+                        <motion.path
+                          d="M5 13l4 4L19 7"
+                          initial={{ pathLength: 0 }}
+                          animate={{ pathLength: 1 }}
+                          transition={{ duration: 0.35, delay: 0.25, ease: "easeOut" }}
+                        />
+                      </svg>
+                    </motion.div>
+                    <h2 className="font-serif text-[clamp(24px,4vw,32px)] font-normal leading-[1.15] tracking-tight mb-2">
+                      You&apos;re in
+                    </h2>
+                    <p className="text-sm text-text-dim font-light mb-8">
+                      We&apos;ll reach out when your spot opens in Minnesota.
+                    </p>
+                    <Button onClick={close} variant="outline">
+                      Close
+                    </Button>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="form"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.15 }}
+                  >
+                    <h2 className="font-serif text-[clamp(24px,4vw,32px)] font-normal leading-[1.15] tracking-tight mb-2">
+                      Join the waitlist
+                    </h2>
+                    <p className="text-sm text-text-dim font-light mb-8">
+                      We&apos;ll notify you when your spot opens in Minnesota.
+                    </p>
 
-              <form onSubmit={(e) => e.preventDefault()} className="flex flex-col gap-3">
-                <label htmlFor="waitlist-email" className="sr-only">
-                  Email address
-                </label>
-                <input
-                  ref={inputRef}
-                  id="waitlist-email"
-                  type="email"
-                  placeholder="your@email.com"
-                  required
-                  className="w-full rounded-full border border-border bg-surface px-5 py-3 text-sm text-text placeholder:text-text-muted outline-none transition-colors duration-200 focus:border-text"
-                />
-                <Button type="submit" className="w-full">
-                  Join the Waitlist
-                </Button>
-              </form>
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+                      <label htmlFor="waitlist-email" className="sr-only">
+                        Email address
+                      </label>
+                      <input
+                        ref={inputRef}
+                        id="waitlist-email"
+                        name="email"
+                        type="email"
+                        placeholder="your@email.com"
+                        required
+                        disabled={status === "submitting"}
+                        className="w-full rounded-full border border-border bg-surface px-5 py-3 text-sm text-text placeholder:text-text-muted outline-none transition-colors duration-200 focus:border-text disabled:opacity-50"
+                      />
+                      <Button type="submit" className="w-full">
+                        {status === "submitting" ? "Joining..." : "Join the Waitlist"}
+                      </Button>
+                    </form>
 
-              <p className="mt-4 text-center text-xs text-text-muted">
-                First 500 spots. No spam, ever.
-              </p>
+                    {status === "error" && (
+                      <p className="mt-3 text-center text-xs text-red-600">
+                        Something went wrong. Please try again.
+                      </p>
+                    )}
+
+                    <p className="mt-4 text-center text-xs text-text-muted">
+                      First 500 spots. No spam, ever.
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
           </div>
         )}
