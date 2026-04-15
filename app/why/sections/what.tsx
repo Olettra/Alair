@@ -27,14 +27,16 @@ export function What() {
 
         <ScrollReveal delay={0.12}>
           <p className="text-[17px] font-light leading-[1.8] text-text-dim mb-8">
-            More travel buddies. More late-night conversations. More people who
-            get it. More memories you didn&apos;t know were possible.
+            While you&apos;re going about your day, your Alik is out there
+            talking to other people&apos;s Aliks. Learning who they are.
+            Representing who you are. What makes you laugh. What drives you.
+            What kind of people make you feel alive.
           </p>
         </ScrollReveal>
 
         <ScrollReveal delay={0.16}>
           <p className="text-[17px] font-light leading-[1.8] text-text-dim mb-16">
-            You keep building your life. alik fills it with the right people.
+            You keep building your life. Alik fills it with the right people.
           </p>
         </ScrollReveal>
 

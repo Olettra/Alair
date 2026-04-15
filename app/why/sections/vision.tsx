@@ -3,10 +3,10 @@
 import { ScrollReveal } from "../../components/animated";
 
 const stories = [
-  "You matched with someone in Barcelona who collects the same vintage records you do. Three months of voice notes later, you\u2019re flying out to hit a flea market together. You stay with his family. His mom makes you dinner. You\u2019ve never met these people, but it feels like you\u2019ve known them your whole life.",
-  "You just moved to Minneapolis. You don\u2019t know anyone. Within two weeks, alik introduces you to someone who hikes in the mornings and argues about philosophy at night. Your exact energy. By month two, you have a standing Saturday plan. By month six, they\u2019re the person you call when things go sideways.",
-  "You\u2019re a new parent. Your old friend group is in a different life stage. They still want to go out at 11\u202FPM. You want someone who gets it. The 6\u202FAM wake-ups, the identity shift, the joy and the overwhelm. alik finds her. She lives 12 minutes away. Your kids are the same age. You didn\u2019t even know you needed this.",
-  "You\u2019ve always wanted to go to Japan but never had anyone to go with. Now you have a friend in Osaka who\u2019s already planning the itinerary. You\u2019re not a tourist. You\u2019re visiting someone who\u2019s been waiting to show you their city.",
+  "Your Alik comes back one day and says. I found someone in Barcelona. He collects the same vintage records you do. Here\u2019s why I think you two make sense. You read the breakdown. You agree. He agrees. You start talking. Three months later you\u2019re flying out to hit a flea market together. His mom makes you dinner. You\u2019ve never been to their home before, but somehow it feels like you\u2019ve always belonged there.",
+  "You just moved to Minneapolis. You don\u2019t know anyone. Two weeks in, Alik comes to you. I found someone. He hikes in the mornings and argues about philosophy at night. I think he\u2019s your exact energy. You read why. You agree. He agrees. By month two you have a standing Saturday plan. By month six he\u2019s the person you call when things go sideways.",
+  "You became a new parent and your world shifted. Your old friends are still out at 11\u202FPM. You\u2019re on 6\u202FAM wake-ups. Alik noticed. It found her. Lives 12 minutes away, kids the same age, feels the same identity shift you do. You didn\u2019t even know you needed this person until Alik explained why you two made sense.",
+  "You always wanted to go to Japan but never had anyone to go with. Alik found someone in Osaka. Showed you exactly why. You agreed. He agreed. Now you\u2019re not a tourist. You\u2019re visiting someone who\u2019s been waiting to show you their city.",
 ];
 
 export function Vision() {

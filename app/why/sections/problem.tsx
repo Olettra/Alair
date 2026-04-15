@@ -4,20 +4,14 @@ import { ScrollReveal } from "../../components/animated";
 
 const lines = [
   {
-    text: "Wake up. Commute. Work. Commute. Crash. Repeat. Somewhere in that loop, you stopped meeting new people.",
-  },
-  {
-    text: "Not on purpose. Life just got loud. The hustle took over. And being human, actually talking to people, greeting strangers, finding your crowd, it all fell off the schedule.",
+    text: "You stopped meeting people. Not on purpose. Life just got loud.",
   },
   {
     text: null,
-    serif: "Right now, somewhere in the world, there\u2019s someone who shares your exact interests, your sense of humor, your energy. Someone whose life would be better with you in it.",
+    serif: "Someone out there shares your exact energy, your humor, your vibe. They\u2019re grinding through the same loop. You\u2019ll probably never cross paths.",
   },
   {
-    text: "They\u2019re out there grinding too. Running the same loop. And you\u2019ll probably never cross paths. Not because of distance, but because nobody has the time to look.",
-  },
-  {
-    text: "That\u2019s the problem. Not that people don\u2019t exist for you. They do. You just have no way to find each other while you\u2019re both busy trying to make it.",
+    text: "Not because they don\u2019t exist. Because nobody has time to look.",
   },
 ];
 
