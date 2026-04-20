@@ -1,7 +1,7 @@
 import { Nav } from "../components/nav";
 import { WhyHero } from "./sections/hero";
 import { Problem } from "./sections/problem";
-import { What } from "./sections/what";
+
 import { How } from "./sections/how";
 import { Vision } from "./sections/vision";
 import { Trust } from "./sections/trust";
@@ -15,7 +15,6 @@ export default function WhyPage() {
       <main className="flex flex-col flex-1">
         <WhyHero />
         <Problem />
-        <What />
         <How />
         <Vision />
         <Trust />

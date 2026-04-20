@@ -17,17 +17,15 @@ export function Hero() {
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <h1 className="font-serif text-[clamp(40px,6vw,72px)] font-normal leading-[1.08] tracking-tight mb-6">
-            I learn who you are.
-            <br />
-            Then I find your <em>people</em>.
+          <h1 className="font-serif text-[clamp(36px,5.5vw,64px)] font-normal leading-[1.1] tracking-tight mb-6">
+            What if someone was out there finding your people while
+            you keep doing your thing?
           </h1>
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <p className="mx-auto max-w-[520px] text-[17px] font-light leading-[1.7] text-text-dim mb-12">
-            Through real conversations, I learn what kind of people you
-            actually click with then I go find them in Minnesota.
+          <p className="mx-auto max-w-[520px] font-serif text-[clamp(18px,2.5vw,24px)] leading-[1.4] tracking-tight text-text-dim mb-12">
+            I learn who you are. Then I find your people.
           </p>
         </FadeIn>
 
