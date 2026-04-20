@@ -2,7 +2,7 @@ import { Nav } from "./components/nav";
 import { Hero } from "./sections/hero";
 import { ChatPreview } from "./sections/chat-preview";
 import { CTA } from "./sections/cta";
-import Link from "next/link";
+import { Footer } from "./components/footer";
 
 export default function Home() {
   return (
@@ -13,22 +13,7 @@ export default function Home() {
         <ChatPreview />
         <CTA />
       </main>
-      <footer className="flex flex-col items-center justify-between gap-4 border-t border-border px-6 py-8 sm:flex-row sm:px-12">
-        <Link href="/" className="font-serif text-xl">
-          alik
-        </Link>
-        <div className="flex gap-6">
-          <a href="#" className="text-[13px] text-text-muted transition-colors duration-200 hover:text-text">
-            Privacy
-          </a>
-          <a href="#" className="text-[13px] text-text-muted transition-colors duration-200 hover:text-text">
-            Terms
-          </a>
-          <a href="#" className="text-[13px] text-text-muted transition-colors duration-200 hover:text-text">
-            Contact
-          </a>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
