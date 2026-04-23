@@ -17,7 +17,7 @@ export function WhyCTA() {
 
       <ScrollReveal delay={0.1}>
         <p className="text-text-dim font-light mb-9">
-          Let me go find them. Starting in Minnesota.
+          Let me go find them.
         </p>
       </ScrollReveal>
 

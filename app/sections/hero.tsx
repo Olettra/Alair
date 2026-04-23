@@ -12,7 +12,7 @@ export function Hero() {
       <div className="max-w-[720px]">
         <FadeIn>
           <p className="mb-5 text-sm text-text-muted">
-            Now accepting early members in Minnesota
+            Now accepting early members
           </p>
         </FadeIn>
 
@@ -37,7 +37,7 @@ export function Hero() {
 
         <FadeIn delay={0.4}>
           <p className="mt-12 text-[13px] text-text-muted">
-            First 500 spots in Minnesota
+            First 500 spots
           </p>
         </FadeIn>
       </div>

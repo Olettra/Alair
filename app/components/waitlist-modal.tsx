@@ -124,7 +124,7 @@ export function WaitlistProvider({ children }: { children: ReactNode }) {
                       You&apos;re in
                     </h2>
                     <p className="text-sm text-text-dim font-light mb-8">
-                      We&apos;ll reach out when your spot opens in Minnesota.
+                      We&apos;ll reach out when your spot opens.
                     </p>
                     <Button onClick={close} variant="outline">
                       Close
@@ -142,7 +142,7 @@ export function WaitlistProvider({ children }: { children: ReactNode }) {
                       Join the waitlist
                     </h2>
                     <p className="text-sm text-text-dim font-light mb-8">
-                      We&apos;ll notify you when your spot opens in Minnesota.
+                      We&apos;ll notify you when your spot opens.
                     </p>
 
                     <form onSubmit={handleSubmit} className="flex flex-col gap-3">

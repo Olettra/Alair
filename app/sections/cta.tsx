@@ -17,7 +17,7 @@ export function CTA() {
 
       <ScrollReveal delay={0.1}>
         <p className="text-text-dim font-light mb-9">
-          Now accepting early members in Minnesota. Your first hangout is on me.
+          Now accepting early members. Your first hangout is on me.
         </p>
       </ScrollReveal>
 
