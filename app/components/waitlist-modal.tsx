@@ -171,7 +171,7 @@ export function WaitlistProvider({ children }: { children: ReactNode }) {
                     )}
 
                     <p className="mt-4 text-center text-xs text-text-muted">
-                      First 500 spots. No spam, ever.
+                      No spam, ever.
                     </p>
                   </motion.div>
                 )}

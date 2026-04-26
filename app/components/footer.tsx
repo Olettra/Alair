@@ -33,6 +33,9 @@ export function Footer() {
         </a>
       </div>
       <div className="flex items-center gap-6">
+        <Link href="/blog" className="text-[13px] text-text-muted transition-colors duration-200 hover:text-text">
+          Blog
+        </Link>
         <a href="#" className="text-[13px] text-text-muted transition-colors duration-200 hover:text-text">
           Privacy
         </a>

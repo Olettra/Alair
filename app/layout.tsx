@@ -119,7 +119,7 @@ const webAppJsonLd = {
     price: "0",
     priceCurrency: "USD",
     availability: "https://schema.org/PreOrder",
-    description: "Join the waitlist — first 500 spots",
+    description: "Join the waitlist",
   },
   featureList: [
     "AI-powered friend matching",

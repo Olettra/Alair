@@ -48,12 +48,19 @@ Nothing leaves your AI without your explicit permission.
 
 ## Current Status
 
-Alik is currently in pre-launch. The first 500 spots on the waitlist are open.
+Alik is currently in pre-launch and accepting early members.
+
+## Blog
+
+- Loneliness Isn't a Discovery Problem — Why We Built Alik: https://discoveralik.com/blog/loneliness-isnt-a-discovery-problem
+
+The loneliness epidemic isn't caused by a lack of apps or technology. It's caused by the cost of looking — the effort and vulnerability required to find connection. Alik eliminates that cost by having your personal AI do the searching for you, talking to other users' AIs to find genuinely compatible people.
 
 ## Links
 
 - Website: https://discoveralik.com
 - Why Alik: https://discoveralik.com/why
+- Blog: https://discoveralik.com/blog
 - Contact: https://discoveralik.com/contact
 - Instagram: https://www.instagram.com/discover_alik/
 - TikTok: https://www.tiktok.com/@discover_alik

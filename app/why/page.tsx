@@ -70,7 +70,7 @@ const faqJsonLd = {
       name: "Is Alik free?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Alik is currently in pre-launch with a waitlist. The first 500 spots are available. Your first hangout introduction is free.",
+        text: "Alik is currently in pre-launch with a waitlist. Your first hangout introduction is free.",
       },
     },
   ],

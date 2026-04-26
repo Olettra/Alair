@@ -37,7 +37,7 @@ export function Hero() {
 
         <FadeIn delay={0.4}>
           <p className="mt-12 text-[13px] text-text-muted">
-            First 500 spots
+            Now accepting early members
           </p>
         </FadeIn>
       </div>

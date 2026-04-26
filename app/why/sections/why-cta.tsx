@@ -29,7 +29,7 @@ export function WhyCTA() {
 
       <ScrollReveal delay={0.2}>
         <p className="mt-4 text-xs text-text-muted">
-          First 500 spots. No swiping. No browsing. Just real people.
+          No swiping. No browsing. Just real people.
         </p>
       </ScrollReveal>
     </section>
