@@ -12,20 +12,21 @@ export function Hero() {
       <div className="max-w-[720px]">
         <FadeIn>
           <p className="mb-5 text-sm text-text-muted">
-            Now accepting early members
+            A personal AI that finds your people
           </p>
         </FadeIn>
 
         <FadeIn delay={0.1}>
           <h1 className="font-serif text-[clamp(36px,5.5vw,64px)] font-normal leading-[1.1] tracking-tight mb-6">
-            What if someone was out there finding your people while
-            you keep doing your thing?
+            What if you never had to look for the right people again?
           </h1>
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <p className="mx-auto max-w-[520px] font-serif text-[clamp(18px,2.5vw,24px)] leading-[1.4] tracking-tight text-text-dim mb-12">
-            I learn who you are. Then I find your people.
+          <p className="mx-auto max-w-[540px] text-[clamp(16px,2vw,19px)] leading-[1.7] text-text-dim mb-12">
+            Alik learns who you are through real conversation, then
+            talks to other AIs to find people you&apos;d actually click
+            with. No swiping. No profiles. No performing.
           </p>
         </FadeIn>
 

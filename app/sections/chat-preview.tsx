@@ -177,7 +177,7 @@ export function ChatPreview() {
       <div className="px-6 sm:px-12 lg:px-20 mb-14">
         <ScrollReveal>
           <p className="text-xs uppercase tracking-[2px] text-text-muted mb-4">
-            See me in action
+            See it in action
           </p>
           <h2 className="font-serif text-[clamp(28px,4vw,44px)] font-normal leading-[1.15] tracking-tight max-w-[520px]">
             A conversation, not a questionnaire
@@ -201,10 +201,9 @@ export function ChatPreview() {
 
       <ScrollReveal delay={0.1}>
         <p className="mx-auto mt-14 max-w-lg px-6 text-center text-[15px] font-light leading-[1.8] text-text-dim">
-          I&apos;m not an app you open once. I learn about you through real
-          conversations over time your humor, your values, how you
-          connect. The more we talk, the better I understand what you need
-          and who you&apos;d actually click with.
+          I learn you through real conversations. When I find someone
+          who fits, I bring them to you with context, not just a
+          profile.
         </p>
       </ScrollReveal>
 

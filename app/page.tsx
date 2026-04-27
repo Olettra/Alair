@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Nav } from "./components/nav";
 import { Hero } from "./sections/hero";
+import { HowItWorks } from "./sections/how-it-works";
 import { ChatPreview } from "./sections/chat-preview";
 import { CTA } from "./sections/cta";
 import { Footer } from "./components/footer";
@@ -17,6 +18,7 @@ export default function Home() {
       <Nav />
       <main className="flex flex-col flex-1">
         <Hero />
+        <HowItWorks />
         <ChatPreview />
         <CTA />
       </main>
