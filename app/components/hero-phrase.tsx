@@ -25,7 +25,7 @@ export function HeroPhrase() {
   const [idx, setIdx] = useState(0);
 
   useEffect(() => {
-    const t = setInterval(() => setIdx((i) => (i + 1) % SCENES.length), 3400);
+    const t = setInterval(() => setIdx((i) => (i + 1) % SCENES.length), 9000);
     return () => clearInterval(t);
   }, []);
 
@@ -34,13 +34,12 @@ export function HeroPhrase() {
   return (
     <div className="w-full flex flex-col items-center gap-8">
       <h1 className="font-serif text-forest text-[clamp(1.1rem,3.6vw,3rem)] leading-[1.25] tracking-tight whitespace-nowrap flex items-center justify-center gap-x-3 px-4 max-w-full">
-        <span>alik is where you find your</span>
+        <span>alik helps you find your</span>
         <KeywordPill text={scene.outcome} size="lg" />
-        <span>.</span>
       </h1>
 
       <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-serif text-forest text-[clamp(0.95rem,1.8vw,1.35rem)]">
-        <span>alik plans</span>
+        <span>and plan</span>
         <KeywordPill text={scene.activity} size="md" />
         <span>with</span>
         <KeywordPill text={scene.group} size="md" />
