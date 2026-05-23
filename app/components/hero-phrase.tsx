@@ -32,13 +32,13 @@ export function HeroPhrase() {
   const scene = SCENES[idx];
 
   return (
-    <div className="w-full flex flex-col items-center gap-8">
-      <h1 className="font-serif text-forest text-[clamp(1.1rem,3.6vw,3rem)] leading-[1.25] tracking-tight whitespace-nowrap flex items-center justify-center gap-x-3 px-4 max-w-full">
+    <div className="w-full flex flex-col items-center gap-6 sm:gap-8">
+      <h1 className="font-serif text-forest text-[clamp(1.5rem,5.5vw,3rem)] leading-[1.25] tracking-tight flex flex-wrap items-center justify-center gap-x-3 gap-y-2 px-4 max-w-full text-center">
         <span>alik helps you find your</span>
         <KeywordPill text={scene.outcome} size="lg" />
       </h1>
 
-      <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-serif text-forest text-[clamp(0.95rem,1.8vw,1.35rem)]">
+      <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-serif text-forest text-[clamp(1rem,2.6vw,1.35rem)] px-4 text-center">
         <span>and plan</span>
         <KeywordPill text={scene.activity} size="md" />
         <span>with</span>
@@ -46,8 +46,8 @@ export function HeroPhrase() {
         <span>.</span>
       </div>
 
-      <div className="px-6 text-center text-forest/70 text-[clamp(0.85rem,1.2vw,1.05rem)] leading-relaxed space-y-1">
-        <p className="whitespace-nowrap">
+      <div className="px-6 text-center text-forest/70 text-[clamp(0.85rem,1.2vw,1.05rem)] leading-relaxed space-y-1 max-w-[44ch] sm:max-w-none">
+        <p>
           No profiles. No swiping. No algorithms. Our AI does the matching for you.
         </p>
         <p>Share your real-life experiences if you want and get paid for it.</p>
