@@ -33,12 +33,12 @@ export function HeroPhrase() {
 
   return (
     <div className="w-full flex flex-col items-center gap-6 sm:gap-8">
-      <h1 className="font-serif text-forest text-[clamp(1.5rem,5.5vw,3rem)] leading-[1.25] tracking-tight flex flex-wrap items-center justify-center gap-x-3 gap-y-2 px-4 max-w-full text-center">
+      <h1 className="font-serif text-forest text-[clamp(0.85rem,3.6vw,3rem)] leading-[1.25] tracking-tight whitespace-nowrap flex items-center justify-center gap-x-2 sm:gap-x-3 px-3 max-w-full">
         <span>alik helps you find your</span>
         <KeywordPill text={scene.outcome} size="lg" />
       </h1>
 
-      <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-serif text-forest text-[clamp(1rem,2.6vw,1.35rem)] px-4 text-center">
+      <div className="flex items-center justify-center gap-x-2 sm:gap-x-3 font-serif text-forest text-[clamp(0.75rem,1.8vw,1.35rem)] px-3 whitespace-nowrap max-w-full">
         <span>and plan</span>
         <KeywordPill text={scene.activity} size="md" />
         <span>with</span>
@@ -46,11 +46,11 @@ export function HeroPhrase() {
         <span>.</span>
       </div>
 
-      <div className="px-6 text-center text-forest/70 text-[clamp(0.85rem,1.2vw,1.05rem)] leading-relaxed space-y-1 max-w-[44ch] sm:max-w-none">
-        <p>
+      <div className="px-4 text-center text-forest/70 text-[clamp(0.62rem,2.6vw,1.05rem)] leading-relaxed space-y-1 max-w-full">
+        <p className="whitespace-nowrap">
           No profiles. No swiping. No algorithms. Our AI does the matching for you.
         </p>
-        <p>Share your real-life experiences if you want and get paid for it.</p>
+        <p className="whitespace-nowrap">Share your real-life experiences if you want and get paid for it.</p>
       </div>
     </div>
   );
@@ -63,7 +63,10 @@ function KeywordPill({
   text: string;
   size?: "md" | "lg";
 }) {
-  const padding = size === "lg" ? "px-6 py-2" : "px-5 py-1.5";
+  const padding =
+    size === "lg"
+      ? "px-3 py-1 sm:px-6 sm:py-2"
+      : "px-2.5 py-1 sm:px-5 sm:py-1.5";
   return (
     <span
       aria-live="polite"

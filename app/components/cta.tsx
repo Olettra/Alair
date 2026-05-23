@@ -51,7 +51,7 @@ export function SignUpCTA() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="group inline-flex items-center gap-2 rounded-full bg-forest text-oat px-8 py-3.5 font-serif italic tracking-wide text-base shadow-[0_8px_24px_-12px_rgba(45,59,46,0.6)] hover:bg-ochre hover:text-forest transition-colors duration-200"
+        className="group inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-forest text-oat px-5 py-2.5 sm:px-8 sm:py-3.5 font-serif italic tracking-wide text-xs sm:text-base shadow-[0_8px_24px_-12px_rgba(45,59,46,0.6)] hover:bg-ochre hover:text-forest transition-colors duration-200"
       >
         <span>REQUEST AN INVITE</span>
         <span
