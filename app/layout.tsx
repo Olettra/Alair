@@ -1,7 +1,5 @@
-import type { Metadata } from "next";
-import { Geist, Instrument_Serif } from "next/font/google";
-import { WaitlistProvider } from "./components/waitlist-modal";
-import { JsonLd } from "./components/json-ld";
+import type { Metadata, Viewport } from "next";
+import { Geist, Fraunces } from "next/font/google";
 import "./globals.css";
 
 const geist = Geist({
@@ -9,143 +7,148 @@ const geist = Geist({
   variable: "--font-geist",
 });
 
-const instrumentSerif = Instrument_Serif({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "500"],
   style: ["normal", "italic"],
-  variable: "--font-instrument",
+  variable: "--font-fraunces",
 });
 
 const SITE_URL = "https://discoveralik.com";
+const SITE_NAME = "alik";
+const TITLE = "alik — a personal AI that finds your people";
+const DESCRIPTION =
+  "alik is a personal AI that finds your people. real coffee, real runs, real connections — no swiping, no profiles.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Alik — An AI That Finds Your People",
-    template: "%s — Alik",
+    default: TITLE,
+    template: "%s · alik",
   },
-  description:
-    "No swiping. No browsing. Alik is a personal AI that learns who you are through real conversations, then finds the friends and connections you've been missing.",
+  description: DESCRIPTION,
+  applicationName: SITE_NAME,
+  generator: "Next.js",
   keywords: [
-    "AI friend finder",
+    "alik",
+    "discover alik",
     "AI matchmaking",
-    "AI-to-AI matchmaking",
-    "find friends with AI",
-    "AI-powered connection app",
-    "AI social connection platform",
-    "personalized AI friend matching",
-    "AI matchmaking without swiping",
-    "alternative to Bumble BFF",
-    "Alik AI",
+    "AI friend finder",
+    "blind date",
+    "coffee date",
+    "running club",
+    "make friends",
+    "meet people",
+    "social connection",
   ],
-  authors: [{ name: "Alik" }],
-  creator: "Alik",
-  publisher: "Alik",
+  authors: [{ name: "alik", url: SITE_URL }],
+  creator: "alik",
+  publisher: "alik",
+  category: "social",
+  referrer: "origin-when-cross-origin",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: SITE_URL,
+  },
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    siteName: SITE_NAME,
+    title: TITLE,
+    description: DESCRIPTION,
+    locale: "en_US",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "alik — a personal AI that finds your people",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/og-image.png"],
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/alik-icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/alik-icon.png", sizes: "512x512", type: "image/png" }],
+  },
+  manifest: "/manifest.webmanifest",
   robots: {
     index: true,
     follow: true,
     googleBot: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
       "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
     },
   },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: SITE_URL,
-    siteName: "Alik",
-    title: "Alik — An AI That Finds Your People",
-    description:
-      "Your personal AI learns who you are, then goes out and finds the right friends and connections for you. No swiping. No browsing. Just real people.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Alik — An AI That Finds Your People",
-        type: "image/png",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Alik — An AI That Finds Your People",
-    description:
-      "Your personal AI learns who you are, then goes out and finds the right friends and connections for you.",
-    images: ["/og-image.png"],
-    creator: "@discover_alik",
-    site: "@discover_alik",
-  },
-  alternates: {
-    canonical: SITE_URL,
-  },
-  category: "Social Networking",
 };
 
-const organizationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Alik",
-  url: SITE_URL,
-  logo: `${SITE_URL}/alik-icon.png`,
-  description:
-    "Alik is a personal AI that learns who you are and finds your people through AI-to-AI conversations.",
-  sameAs: [
-    "https://www.instagram.com/discover_alik/",
-    "https://www.tiktok.com/@discover_alik",
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#efe8d7" },
+    { media: "(prefers-color-scheme: dark)", color: "#2d3b2e" },
   ],
-  foundingDate: "2025",
-  contactPoint: {
-    "@type": "ContactPoint",
-    contactType: "customer support",
-    url: `${SITE_URL}/contact`,
-  },
+  width: "device-width",
+  initialScale: 1,
+  colorScheme: "light",
 };
 
-const webAppJsonLd = {
+const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "Alik",
-  url: SITE_URL,
-  applicationCategory: "SocialNetworkingApplication",
-  operatingSystem: "Web",
-  description:
-    "A personal AI that learns who you are through conversations, then autonomously finds compatible friends and connections by talking to other users' AIs. No swiping. No browsing.",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-    availability: "https://schema.org/PreOrder",
-    description: "Join the waitlist",
-  },
-  featureList: [
-    "AI-powered friend matching",
-    "Natural conversation learning via text and voice",
-    "AI-to-AI matchmaking across users worldwide",
-    "Privacy-first three-layer data model",
-    "Contextual introductions with match reasoning",
-    "Works in the background while you live your life",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}#organization`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: `${SITE_URL}/alik-icon.png`,
+      sameAs: [
+        "https://www.instagram.com/discover_alik/",
+        "https://www.tiktok.com/@discover_alik",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}#website`,
+      url: SITE_URL,
+      name: SITE_NAME,
+      description: DESCRIPTION,
+      publisher: { "@id": `${SITE_URL}#organization` },
+      inLanguage: "en-US",
+    },
   ],
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en"
-      data-scroll-behavior="smooth"
-      className={`${geist.variable} ${instrumentSerif.variable} h-full antialiased`}
+      className={`${geist.variable} ${fraunces.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">
-        <JsonLd data={organizationJsonLd} />
-        <JsonLd data={webAppJsonLd} />
-        <WaitlistProvider>{children}</WaitlistProvider>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
+      <body className="min-h-[100svh] h-[100svh] flex flex-col overflow-hidden">
+        {children}
       </body>
     </html>
   );

@@ -1,48 +1,114 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-bg: #faf9f7;
-  --color-surface: #ffffff;
-  --color-border: #e8e6e1;
-  --color-border-light: #f0eeeb;
-  --color-text: #1a1816;
-  --color-text-dim: #5f5954;
-  --color-text-muted: #a09a94;
+  --color-oat: #efe8d7;
+  --color-forest: #2d3b2e;
+  --color-ochre: #c8924a;
+  --color-muted: #6b7563;
+
   --font-sans: var(--font-geist);
-  --font-serif: var(--font-instrument);
+  --font-serif: var(--font-fraunces);
 }
 
-html[data-scroll-behavior="smooth"] {
-  scroll-behavior: smooth;
+html,
+body {
+  background: var(--color-oat);
+  color: var(--color-forest);
+  overflow-x: hidden;
 }
 
 body {
-  background: var(--color-bg);
-  color: var(--color-text);
+  min-height: 100svh;
+}
+
+body {
+  font-family: var(--font-sans);
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
 }
 
 ::selection {
-  background: var(--color-text);
-  color: var(--color-bg);
+  background: var(--color-forest);
+  color: var(--color-oat);
 }
 
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
+:focus-visible {
+  outline: 2px solid var(--color-ochre);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
-@keyframes fade-in-fallback {
+@keyframes chip-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
   to {
     opacity: 1;
-    transform: none;
+    transform: translateY(0);
   }
 }
 
-[style*="opacity:0"] {
-  animation: fade-in-fallback 0.5s ease-out 1.5s both;
+@keyframes chip-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fade-up 600ms ease-out both;
+}
+
+@keyframes overlay-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0)  scale(1); }
+}
+
+@keyframes sheet-in {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.overlay-in {
+  animation: overlay-in 200ms ease-out both;
+}
+
+.modal-in {
+  animation: modal-in 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.sheet-in {
+  animation: sheet-in 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }
