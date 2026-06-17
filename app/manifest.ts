@@ -4,10 +4,10 @@ export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "alik",
+    name: "alik — AI-curated rooms for real-life connection",
     short_name: "alik",
     description:
-      "alik is a personal AI that finds your people — real coffee, real runs, real connections.",
+      "alik creates AI-curated rooms for real-life connection — no profiles, no swiping, no algorithms. Some become friendship, some community, some romance.",
     start_url: "/",
     display: "standalone",
     background_color: "#efe8d7",

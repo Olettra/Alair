@@ -17,6 +17,17 @@ body {
   overflow-x: hidden;
 }
 
+/* Soft layered base wash beneath the animated ambient orbs */
+body {
+  background:
+    radial-gradient(
+      120% 90% at 50% -10%,
+      color-mix(in srgb, var(--color-oat) 92%, white) 0%,
+      var(--color-oat) 55%,
+      color-mix(in srgb, var(--color-oat) 88%, var(--color-forest)) 100%
+    );
+}
+
 body {
   min-height: 100svh;
 }
@@ -103,7 +114,153 @@ body {
   animation: sheet-in 320ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+/* ---- Ambient living background ---- */
+
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(70px);
+  opacity: 0.55;
+  will-change: transform;
+}
+
+.orb-1 {
+  width: 46vmax;
+  height: 46vmax;
+  top: -14vmax;
+  left: -10vmax;
+  background: radial-gradient(
+    circle at 30% 30%,
+    color-mix(in srgb, var(--color-ochre) 60%, transparent),
+    transparent 70%
+  );
+  animation: drift-1 26s ease-in-out infinite;
+}
+
+.orb-2 {
+  width: 40vmax;
+  height: 40vmax;
+  bottom: -16vmax;
+  right: -8vmax;
+  background: radial-gradient(
+    circle at 70% 70%,
+    color-mix(in srgb, var(--color-forest) 45%, transparent),
+    transparent 70%
+  );
+  opacity: 0.4;
+  animation: drift-2 32s ease-in-out infinite;
+}
+
+.orb-3 {
+  width: 30vmax;
+  height: 30vmax;
+  top: 35%;
+  left: 55%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    color-mix(in srgb, var(--color-ochre) 38%, transparent),
+    transparent 70%
+  );
+  opacity: 0.32;
+  animation: drift-3 22s ease-in-out infinite;
+}
+
+@keyframes drift-1 {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(8vmax, 6vmax, 0) scale(1.12);
+  }
+}
+
+@keyframes drift-2 {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1.05);
+  }
+  50% {
+    transform: translate3d(-7vmax, -5vmax, 0) scale(1);
+  }
+}
+
+@keyframes drift-3 {
+  0%,
+  100% {
+    transform: translate3d(-50%, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-58%, -8vmax, 0) scale(1.18);
+  }
+}
+
+/* Fine film grain for an editorial, premium texture */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---- Connection arcs marquee ---- */
+
+.marquee-row {
+  animation: marquee 34s linear infinite;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* fade the marquee edges so arcs slide in and out gracefully */
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 9%,
+    black 91%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 9%,
+    black 91%,
+    transparent
+  );
+}
+
+/* Soft vignette to pull focus to the center */
+.vignette {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    100% 80% at 50% 45%,
+    transparent 55%,
+    color-mix(in srgb, var(--color-forest) 12%, transparent) 100%
+  );
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .orb {
+    animation: none !important;
+  }
   *,
   *::before,
   *::after {

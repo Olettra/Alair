@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "motion/react";
 import { InfoDialog } from "./info-dialog";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mlgovgdp";
@@ -48,19 +49,27 @@ export function SignUpCTA() {
 
   return (
     <>
-      <button
+      <motion.button
         type="button"
         onClick={() => setOpen(true)}
-        className="group inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-forest text-oat px-5 py-2.5 sm:px-8 sm:py-3.5 font-serif italic tracking-wide text-xs sm:text-base shadow-[0_8px_24px_-12px_rgba(45,59,46,0.6)] hover:bg-ochre hover:text-forest transition-colors duration-200"
+        whileHover={{ scale: 1.04, y: -2 }}
+        whileTap={{ scale: 0.97 }}
+        transition={{ type: "spring", stiffness: 400, damping: 20 }}
+        className="group relative inline-flex items-center gap-1.5 sm:gap-2 overflow-hidden rounded-full bg-forest text-oat px-5 py-2.5 sm:px-8 sm:py-3.5 font-serif italic tracking-wide text-xs sm:text-base shadow-[0_8px_24px_-12px_rgba(45,59,46,0.6)] hover:bg-ochre hover:text-forest transition-colors duration-200"
       >
-        <span>REQUEST AN INVITE</span>
+        {/* shine sweep on hover */}
         <span
           aria-hidden="true"
-          className="transition-transform duration-200 group-hover:translate-x-1"
+          className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-oat/25 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
+        />
+        <span className="relative">REQUEST AN INVITE</span>
+        <span
+          aria-hidden="true"
+          className="relative transition-transform duration-200 group-hover:translate-x-1"
         >
           →
         </span>
-      </button>
+      </motion.button>
 
       <InfoDialog open={open} onClose={handleClose} title="request an invite" hashId="invite">
         {status === "success" ? (

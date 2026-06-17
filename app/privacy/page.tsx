@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "privacy notice — alik",
   description:
     "how alik collects, uses, and protects your personal information.",
-  alternates: { canonical: "https://discoveralik.com/privacy" },
+  alternates: { canonical: "https://alik-ai.com/privacy" },
 };
 
 export default function PrivacyPage() {
@@ -30,10 +30,10 @@ export default function PrivacyPage() {
           <p>
             Our services include our website (
             <a
-              href="https://discoveralik.com"
+              href="https://alik-ai.com"
               className="underline hover:text-white"
             >
-              www.discoveralik.com
+              www.alik-ai.com
             </a>
             ), any other websites that link to this Privacy Notice, our mobile
             experiences, and the related content, platform, products, surveys,
@@ -290,10 +290,10 @@ export default function PrivacyPage() {
           <p>
             Questions or requests about this Privacy Notice? Email us at{" "}
             <a
-              href="mailto:hello@discoveralik.com"
+              href="mailto:hello@alik-ai.com"
               className="underline hover:text-white"
             >
-              hello@discoveralik.com
+              hello@alik-ai.com
             </a>
             .
           </p>

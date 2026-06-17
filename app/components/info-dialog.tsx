@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useId, useRef } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { AnimatePresence, motion } from "motion/react";
 
 export function InfoDialog({
   open,
@@ -19,6 +20,9 @@ export function InfoDialog({
   const titleId = useId();
   const descId = useId();
   const panelRef = useRef<HTMLDivElement | null>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
 
   useEffect(() => {
     if (!open) return;
@@ -45,26 +49,36 @@ export function InfoDialog({
     };
   }, [open, onClose]);
 
-  if (!open || typeof document === "undefined") return null;
+  if (!mounted) return null;
 
   return createPortal(
-    <div className="fixed inset-0 z-[100] flex items-end md:items-center justify-center">
-      <button
-        type="button"
-        aria-label="Close dialog"
-        onClick={onClose}
-        className="absolute inset-0 bg-oat/75 backdrop-blur-lg overlay-in cursor-default"
-      />
+    <AnimatePresence>
+      {open && (
+        <div className="fixed inset-0 z-[100] flex items-end md:items-center justify-center">
+          <motion.button
+            type="button"
+            aria-label="Close dialog"
+            onClick={onClose}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="absolute inset-0 bg-oat/75 backdrop-blur-lg cursor-default"
+          />
 
-      <div
-        ref={panelRef}
-        id={hashId}
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby={titleId}
-        aria-describedby={descId}
-        className="relative w-full md:max-w-[460px] mx-0 md:mx-4 bg-oat text-forest rounded-t-3xl md:rounded-2xl ring-1 ring-forest/20 shadow-[0_30px_80px_-20px_rgba(45,59,46,0.5),0_0_0_1px_rgba(45,59,46,0.05)] sheet-in md:modal-in max-h-[85svh] flex flex-col font-serif"
-      >
+          <motion.div
+            ref={panelRef}
+            id={hashId}
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby={titleId}
+            aria-describedby={descId}
+            initial={{ opacity: 0, y: 28, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.98 }}
+            transition={{ type: "spring", stiffness: 320, damping: 30, mass: 0.8 }}
+            className="relative w-full md:max-w-[460px] mx-0 md:mx-4 bg-oat text-forest rounded-t-3xl md:rounded-2xl ring-1 ring-forest/20 shadow-[0_30px_80px_-20px_rgba(45,59,46,0.5),0_0_0_1px_rgba(45,59,46,0.05)] max-h-[85svh] flex flex-col font-serif"
+          >
         <div className="md:hidden flex justify-center pt-3 pb-1">
           <span className="block w-10 h-1.5 rounded-full bg-forest/20" />
         </div>
@@ -102,14 +116,16 @@ export function InfoDialog({
           <hr className="mt-4 border-0 h-px bg-forest/15" />
         </div>
 
-        <div
-          id={descId}
-          className="px-6 md:px-7 pt-5 pb-6 md:pb-7 overflow-y-auto space-y-4 text-[14px] md:text-[15px] leading-[1.7] text-forest"
-        >
-          {children}
+            <div
+              id={descId}
+              className="px-6 md:px-7 pt-5 pb-6 md:pb-7 overflow-y-auto space-y-4 text-[14px] md:text-[15px] leading-[1.7] text-forest"
+            >
+              {children}
+            </div>
+          </motion.div>
         </div>
-      </div>
-    </div>,
+      )}
+    </AnimatePresence>,
     document.body,
   );
 }

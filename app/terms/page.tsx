@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "terms of service — alik",
   description:
     "the terms and conditions that apply to your use of alik.",
-  alternates: { canonical: "https://discoveralik.com/terms" },
+  alternates: { canonical: "https://alik-ai.com/terms" },
 };
 
 export default function TermsPage() {
@@ -21,10 +21,10 @@ export default function TermsPage() {
             This page explains the terms and conditions that apply to your use
             of our service, including our website (
             <a
-              href="https://discoveralik.com"
+              href="https://alik-ai.com"
               className="underline hover:text-white"
             >
-              discoveralik.com
+              alik-ai.com
             </a>
             ), any experiences or events you hear about through us
             (collectively, &ldquo;Experiences&rdquo;), and any software,
@@ -67,10 +67,10 @@ export default function TermsPage() {
             and up to date. Don&rsquo;t share your credentials or impersonate
             anyone else. Notify us immediately at{" "}
             <a
-              href="mailto:hello@discoveralik.com"
+              href="mailto:hello@alik-ai.com"
               className="underline hover:text-white"
             >
-              hello@discoveralik.com
+              hello@alik-ai.com
             </a>{" "}
             if you suspect unauthorized use of your account.
           </p>
@@ -195,10 +195,10 @@ export default function TermsPage() {
             period using your saved payment method until you cancel. You can
             cancel at any time through your account or by contacting us at{" "}
             <a
-              href="mailto:hello@discoveralik.com"
+              href="mailto:hello@alik-ai.com"
               className="underline hover:text-white"
             >
-              hello@discoveralik.com
+              hello@alik-ai.com
             </a>
             . Cancellation takes effect at the end of the current billing
             period, and we do not provide refunds for unused time.
@@ -224,10 +224,10 @@ export default function TermsPage() {
             If you believe content on the Service infringes your copyright,
             please send a notice that complies with the DMCA to{" "}
             <a
-              href="mailto:copyright@discoveralik.com"
+              href="mailto:copyright@alik-ai.com"
               className="underline hover:text-white"
             >
-              copyright@discoveralik.com
+              copyright@alik-ai.com
             </a>
             . We may terminate the accounts of repeat infringers.
           </p>
@@ -290,10 +290,10 @@ export default function TermsPage() {
             <strong>Informal resolution first:</strong> before filing a claim,
             you agree to try to resolve the dispute informally by contacting{" "}
             <a
-              href="mailto:hello@discoveralik.com"
+              href="mailto:hello@alik-ai.com"
               className="underline hover:text-white"
             >
-              hello@discoveralik.com
+              hello@alik-ai.com
             </a>
             . If we can&rsquo;t resolve the dispute within 60 days, you and we
             agree to resolve any remaining dispute through{" "}
@@ -310,10 +310,10 @@ export default function TermsPage() {
             <strong>Opt-out:</strong> you may opt out of the arbitration
             agreement within 30 days of first accepting these Terms by emailing{" "}
             <a
-              href="mailto:hello@discoveralik.com"
+              href="mailto:hello@alik-ai.com"
               className="underline hover:text-white"
             >
-              hello@discoveralik.com
+              hello@alik-ai.com
             </a>{" "}
             with your name and the words &ldquo;arbitration opt-out.&rdquo;
           </p>
@@ -339,10 +339,10 @@ export default function TermsPage() {
           <p>
             Questions? Email us at{" "}
             <a
-              href="mailto:hello@discoveralik.com"
+              href="mailto:hello@alik-ai.com"
               className="underline hover:text-white"
             >
-              hello@discoveralik.com
+              hello@alik-ai.com
             </a>
             .
           </p>

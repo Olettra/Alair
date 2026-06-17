@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Fraunces } from "next/font/google";
 import "./globals.css";
+import { AmbientBackground } from "./components/ambient-background";
+import { FAQ } from "./seo-content";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -14,11 +16,11 @@ const fraunces = Fraunces({
   variable: "--font-fraunces",
 });
 
-const SITE_URL = "https://discoveralik.com";
+const SITE_URL = "https://alik-ai.com";
 const SITE_NAME = "alik";
-const TITLE = "alik — a personal AI that finds your people";
+const TITLE = "alik — AI-curated rooms for real-life connection";
 const DESCRIPTION =
-  "alik is a personal AI that finds your people. real coffee, real runs, real connections — no swiping, no profiles.";
+  "alik creates AI-curated rooms for real-life connection. some become romantic, some friendship, some community — alik doesn't force the outcome. no profiles, no swiping, no algorithms.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -32,14 +34,16 @@ export const metadata: Metadata = {
   keywords: [
     "alik",
     "discover alik",
+    "AI-curated rooms for real-life connection",
+    "real-life connection",
     "AI matchmaking",
     "AI friend finder",
-    "blind date",
-    "coffee date",
-    "running club",
-    "make friends",
-    "meet people",
-    "social connection",
+    "make friends in real life",
+    "meet people without swiping",
+    "alternative to dating apps",
+    "no swiping no profiles",
+    "find your community",
+    "coffee and a walk",
   ],
   authors: [{ name: "alik", url: SITE_URL }],
   creator: "alik",
@@ -66,7 +70,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "alik — a personal AI that finds your people",
+        alt: "alik — AI-curated rooms for real-life connection",
       },
     ],
   },
@@ -116,6 +120,8 @@ const jsonLd = {
       name: SITE_NAME,
       url: SITE_URL,
       logo: `${SITE_URL}/alik-icon.png`,
+      description: DESCRIPTION,
+      slogan: "AI-curated rooms for real-life connection.",
       sameAs: [
         "https://www.instagram.com/discover_alik/",
         "https://www.tiktok.com/@discover_alik",
@@ -129,6 +135,30 @@ const jsonLd = {
       description: DESCRIPTION,
       publisher: { "@id": `${SITE_URL}#organization` },
       inLanguage: "en-US",
+    },
+    {
+      "@type": "Service",
+      "@id": `${SITE_URL}#service`,
+      name: "alik",
+      serviceType: "AI-powered matchmaking for real-life connection",
+      description:
+        "An AI that curates rooms and introductions for real-life connection — friendship, community, family, or romance — without profiles, swiping, or algorithms.",
+      url: SITE_URL,
+      provider: { "@id": `${SITE_URL}#organization` },
+      areaServed: "Worldwide",
+      audience: {
+        "@type": "Audience",
+        audienceType: "People seeking genuine real-life connection",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${SITE_URL}#faq`,
+      mainEntity: FAQ.map(({ q, a }) => ({
+        "@type": "Question",
+        name: q,
+        acceptedAnswer: { "@type": "Answer", text: a },
+      })),
     },
   ],
 };
@@ -148,6 +178,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-[100svh] h-[100svh] flex flex-col overflow-hidden">
+        <AmbientBackground />
         {children}
       </body>
     </html>

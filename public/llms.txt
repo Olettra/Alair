@@ -1,66 +1,46 @@
-# Alik
+# alik
 
-> Alik is a personal AI that finds your people. It learns who you are through real conversations, then talks to other users' AIs to find genuinely compatible friends and connections. No swiping. No browsing.
+> alik creates AI-curated rooms for real-life connection. Instead of profiles, swiping, or a feed to scroll, alik gets to know you and introduces you to people you should actually meet — for coffee and a walk, a run and brunch, dinner, live music, or a volunteering morning. Some connections become romantic, some become friendship, and some become community or family. alik doesn't force the outcome.
 
 ## About
 
-Alik is an AI-powered social connection platform. Instead of traditional matching apps that rely on profiles, photos, and swiping, Alik uses a personal AI agent that gets to know each user through natural text and voice conversations. The AI learns your values, humor, communication style, and what kind of people make your life better.
+alik is an AI-powered service for real-life connection. It is not a traditional dating or social app: there are no profiles, no swiping, and no feed algorithms. alik does the searching for you and is built around meeting in real life rather than endless messaging.
 
-Your AI then autonomously communicates with other users' AIs to find compatible matches. When there's a genuine fit, Alik creates a contextual introduction explaining exactly why you'd click — then steps back.
+The core idea: a connection rarely stays what it started as. A stranger becomes a friend; a friend becomes community; an acquaintance becomes one of your favorite people. Dating apps force a single outcome. alik does not — it curates the room, then lets the relationship become whatever it genuinely becomes.
 
-Alik is designed for all types of meaningful connections — friendships, not just romantic matches.
+## How it works
 
-## Key Features
+1. alik gets to know who you really are — your values, your humor, how you actually connect.
+2. alik curates small "rooms" and warm introductions with compatible people near you.
+3. You meet in real life around a real activity — coffee, a walk, a run, dinner, live music, or volunteering.
+4. The outcome is never forced. Some rooms become romance, some friendship, some community, some family.
 
-- Conversational learning: Natural text and voice conversations instead of quizzes or profiles
-- AI-to-AI matchmaking: Your AI talks to other AIs worldwide to find compatible people
-- Contextual introductions: Matches come with explanations of why you'd connect
-- Privacy-first: Three-layer privacy model — private memory, matchable signals, shareable intros
-- All connection types: Friends, mentors, collaborators — not just dates
-- Always working: Your AI searches while you sleep, work, and live your life
+## What makes alik different
 
-## How It Works
+- No profiles, no swiping, no algorithms to scroll.
+- The AI does the searching; you do the living.
+- Built for real-life meetings, not endless chat.
+- Open to every kind of connection — friendship, community, family, or romance.
 
-1. You talk to your Alik through text or voice conversations
-2. Alik learns who you really are — your values, humor, how you connect
-3. Your AI searches by talking to other users' AIs around the world
-4. When a genuine match is found, Alik creates a contextual introduction
-5. You approve the introduction before anything is shared
-6. The humans connect; the AI steps back
+## Earn while you wait
 
-## Privacy Model
+While you wait for a match, you can earn by sharing ordinary real-life experiences that brands and researchers want to learn from. You choose what to share, and you are paid once your submission is approved.
 
-Alik uses a three-layer privacy system:
+## FAQ
 
-- Private memory: Your raw thoughts and venting stay yours. The AI uses them to understand you, but never shares them.
-- Matchable signals: Abstracted patterns like "values directness" or "bonds through humor." You can see and edit these anytime.
-- Shareable intro: The summary your AI creates before introducing you. You approve every word before anyone sees it.
+- Is alik a dating app? Not exactly. alik is for real-life connection of every kind; some connections become romantic, others friendship, community, or family.
+- How is alik different from dating apps? Dating apps make you swipe through profiles. alik does the searching for you and focuses on real-life meetings, with no profiles, swiping, or feed algorithms.
+- How do I join? alik is invite-only. Request an invite on the homepage to be considered for the next round.
+- Can you make money on alik? Yes — by sharing approved real-life experiences while you wait for a match.
 
-Nothing leaves your AI without your explicit permission.
+## Status
 
-## Category
-
-- AI friend finder
-- AI matchmaking
-- AI-powered social connection platform
-- AI-to-AI matchmaking
-- Alternative to Bumble BFF, Friender, and traditional social apps
-
-## Current Status
-
-Alik is currently in pre-launch and accepting early members.
-
-## Blog
-
-- Loneliness Isn't a Discovery Problem — Why We Built Alik: https://discoveralik.com/blog/loneliness-isnt-a-discovery-problem
-
-The loneliness epidemic isn't caused by a lack of apps or technology. It's caused by the cost of looking — the effort and vulnerability required to find connection. Alik eliminates that cost by having your personal AI do the searching for you, talking to other users' AIs to find genuinely compatible people.
+alik is invite-only and currently accepting early members ahead of a wider launch.
 
 ## Links
 
-- Website: https://discoveralik.com
-- Why Alik: https://discoveralik.com/why
-- Blog: https://discoveralik.com/blog
-- Contact: https://discoveralik.com/contact
+- Website: https://alik-ai.com
+- Privacy Policy: https://alik-ai.com/privacy
+- Terms of Service: https://alik-ai.com/terms
 - Instagram: https://www.instagram.com/discover_alik/
 - TikTok: https://www.tiktok.com/@discover_alik
