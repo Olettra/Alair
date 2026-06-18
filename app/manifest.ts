@@ -7,7 +7,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "alik — AI-curated rooms for real-life connection",
     short_name: "alik",
     description:
-      "alik creates AI-curated rooms for real-life connection — no profiles, no swiping, no algorithms. Some become friendship, some community, some romance.",
+      "alik is an AI for real-life connection. You talk to it, it learns who you are and finds your people, then introduces you in real life. No profiles, no swiping. 25+, invite-only.",
     start_url: "/",
     display: "standalone",
     background_color: "#efe8d7",

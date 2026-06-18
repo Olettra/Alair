@@ -20,7 +20,7 @@ const SITE_URL = "https://alik-ai.com";
 const SITE_NAME = "alik";
 const TITLE = "alik — AI-curated rooms for real-life connection";
 const DESCRIPTION =
-  "alik creates AI-curated rooms for real-life connection. some become romantic, some friendship, some community — alik doesn't force the outcome. no profiles, no swiping, no algorithms.";
+  "alik is an AI for real-life connection. you just talk to it; it learns who you are and finds your people (friends, community, a run mate, sometimes love), then its AI talks to theirs to introduce you in real life. no profiles, no swiping. 25+, invite-only.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -34,16 +34,16 @@ export const metadata: Metadata = {
   keywords: [
     "alik",
     "discover alik",
-    "AI-curated rooms for real-life connection",
-    "real-life connection",
-    "AI matchmaking",
-    "AI friend finder",
-    "make friends in real life",
+    "AI for real-life connection",
+    "AI matchmaker",
+    "AI that finds friends",
+    "make friends as an adult",
     "meet people without swiping",
     "alternative to dating apps",
     "no swiping no profiles",
     "find your community",
-    "coffee and a walk",
+    "find a run mate",
+    "meet people 25 and up",
   ],
   authors: [{ name: "alik", url: SITE_URL }],
   creator: "alik",
@@ -136,9 +136,9 @@ const jsonLd = {
       "@type": "Service",
       "@id": `${SITE_URL}#service`,
       name: "alik",
-      serviceType: "AI-powered matchmaking for real-life connection",
+      serviceType: "AI companion and matchmaking for real-life connection",
       description:
-        "An AI that curates rooms and introductions for real-life connection — friendship, community, family, or romance — without profiles, swiping, or algorithms.",
+        "An AI you talk to that learns who you are, talks to other people's AI, and introduces you to the people who should be in your life: friends, community, a run mate, or love. No profiles or swiping. For adults 25 and up.",
       url: SITE_URL,
       provider: { "@id": `${SITE_URL}#organization` },
       areaServed: "Worldwide",
@@ -173,7 +173,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-[100svh] h-[100svh] flex flex-col overflow-hidden">
+      <body className="min-h-[100svh] flex flex-col">
         <AmbientBackground />
         {children}
       </body>

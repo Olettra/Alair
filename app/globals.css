@@ -10,6 +10,11 @@
   --font-serif: var(--font-fraunces);
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
 html,
 body {
   background: var(--color-oat);
@@ -244,6 +249,55 @@ body {
   );
 }
 
+/* A soft light gliding slowly 1 → 2 → 3, then resetting back to 1 (fade, no reverse) */
+.dot-travel {
+  animation: dot-travel 11s ease-in-out infinite;
+}
+
+@keyframes dot-travel {
+  0% {
+    left: 16.66%;
+    opacity: 1;
+  }
+  28% {
+    left: 50%;
+  }
+  56% {
+    left: 83.34%;
+    opacity: 1;
+  }
+  64% {
+    left: 83.34%;
+    opacity: 0;
+  }
+  65% {
+    left: 16.66%;
+    opacity: 0;
+  }
+  73% {
+    left: 16.66%;
+    opacity: 1;
+  }
+  100% {
+    left: 16.66%;
+    opacity: 1;
+  }
+}
+
+/* A quick camera-flash as each polaroid quote appears */
+.polaroid-flash {
+  animation: polaroid-flash 0.55s ease-out forwards;
+}
+
+@keyframes polaroid-flash {
+  0% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 /* Soft vignette to pull focus to the center */
 .vignette {
   position: fixed;
@@ -258,6 +312,9 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
   .orb {
     animation: none !important;
   }
