@@ -61,7 +61,7 @@ export function TaglineStage() {
         >
           {/* rotation on a static wrapper so motion only animates opacity/scale/y */}
           <div style={{ transform: `rotate(${rot}deg)` }}>
-            <div className="relative w-64 bg-[#faf7ef] p-3 pb-9 shadow-[0_22px_48px_-18px_rgba(45,59,46,0.55)] sm:w-72">
+            <div className="relative w-64 bg-[#fafafa] p-3 pb-9 ring-1 ring-forest/15 shadow-[0_22px_48px_-18px_rgba(20,20,20,0.5)] sm:w-72">
               {/* a strip of tape, like it was just stuck down */}
               <span className="absolute -top-3 left-1/2 h-6 w-24 -translate-x-1/2 -rotate-2 bg-ochre/20 ring-1 ring-ochre/10" />
               {/* camera flash on each new shot */}

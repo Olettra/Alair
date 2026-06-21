@@ -1,10 +1,13 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-oat: #efe8d7;
-  --color-forest: #2d3b2e;
-  --color-ochre: #c8924a;
-  --color-muted: #6b7563;
+  /* Monochrome brand: white paper, near-black ink, one neutral gray that
+     blends between them. Token names are kept for stability — oat = white,
+     forest = black, ochre = the gray accent, muted = a softer gray. */
+  --color-oat: #ffffff;
+  --color-forest: #161616;
+  --color-ochre: #8a8a8a;
+  --color-muted: #6f6f6f;
 
   --font-sans: var(--font-geist);
   --font-serif: var(--font-fraunces);
@@ -281,6 +284,28 @@ body {
   100% {
     left: 16.66%;
     opacity: 1;
+  }
+}
+
+/* Blinking caret for the typed "Feel ___" headline */
+.type-caret {
+  display: inline-block;
+  width: 2px;
+  height: 0.82em;
+  margin-left: 0.08em;
+  transform: translateY(0.1em);
+  background: var(--color-ochre);
+  animation: caret-blink 1.05s steps(1) infinite;
+}
+
+@keyframes caret-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
   }
 }
 

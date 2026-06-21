@@ -115,10 +115,12 @@ const PEOPLE: Person[] = [
   },
 ];
 
+// A crisp hairline gray ring hugs every photo so the circles read on white;
+// lit rooms gain a soft gray halo and a deeper drop shadow to float forward.
 const RING_DIM =
-  "0 0 0 2px rgba(239,232,215,0.85), 0 12px 30px -14px rgba(45,59,46,0.3)";
+  "0 0 0 1px rgba(20,20,20,0.12), 0 12px 30px -14px rgba(20,20,20,0.22)";
 const RING_LIT =
-  "0 0 0 2px rgba(239,232,215,0.95), 0 0 0 6px rgba(200,146,74,0.4), 0 18px 42px -10px rgba(45,59,46,0.45)";
+  "0 0 0 1.5px rgba(20,20,20,0.18), 0 0 0 7px rgba(138,138,138,0.16), 0 20px 44px -12px rgba(20,20,20,0.4)";
 
 export function MatchmakingConstellation() {
   const reduce = useReducedMotion();
@@ -153,6 +155,7 @@ export function MatchmakingConstellation() {
             >
               {/* continuous wander */}
               <motion.div
+                className="relative"
                 animate={
                   reduce
                     ? undefined
@@ -170,7 +173,19 @@ export function MatchmakingConstellation() {
                       }
                 }
               >
-                {/* the room reacts to the outcome word: lit rooms swell + glow ochre */}
+                {/* a slow radar-ping ripples out of the active room, so the lit
+                    space feels alive without pulling focus from the headline */}
+                {lit && !reduce && (
+                  <motion.span
+                    className={`pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full ${p.size}`}
+                    initial={{ opacity: 0.4, scale: 1 }}
+                    animate={{ opacity: 0, scale: 1.7 }}
+                    transition={{ duration: 2.6, repeat: Infinity, ease: "easeOut" }}
+                    style={{ boxShadow: "0 0 0 1px rgba(20,20,20,0.3)" }}
+                  />
+                )}
+
+                {/* the room reacts to the outcome word: lit rooms swell + glow */}
                 <motion.span
                   className={`relative block ${p.size} overflow-hidden rounded-full`}
                   animate={{
@@ -190,7 +205,7 @@ export function MatchmakingConstellation() {
                     loading="eager"
                     className="h-full w-full object-cover"
                   />
-                  <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-forest/10" />
+                  <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-forest/15" />
                 </motion.span>
               </motion.div>
 

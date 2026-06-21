@@ -51,11 +51,11 @@ export function HowItWorksSection() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="max-w-xl font-serif text-forest/75 text-lg leading-relaxed sm:text-xl lg:pb-2">
-              Close friendships have quietly collapsed, not because we stopped
-              wanting them, but because finding each other got hard. alik does
-              the finding for you, the way a great matchmaker would if they
-              never slept. And while you wait for your people, you can earn,
-              paid for the kind of real, human insight only you can give.
+              And while alik is out doing its thing, comparing notes with other
+              alik, searching, vetting, and handling the awkward first hellos,
+              you don&rsquo;t just wait around. You earn. We pay you for the kind
+              of real, human insight only you can give, so the time before you
+              meet your people is never wasted.
             </p>
           </Reveal>
         </div>
@@ -73,7 +73,7 @@ export function HowItWorksSection() {
             className="dot-travel absolute top-1/2 h-9 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full"
             style={{
               background:
-                "radial-gradient(closest-side, rgba(200,146,74,0.85), rgba(200,146,74,0))",
+                "radial-gradient(closest-side, rgba(138,138,138,0.85), rgba(138,138,138,0))",
             }}
           />
         </div>

@@ -55,7 +55,7 @@ export function SignUpCTA() {
         whileHover={{ scale: 1.04, y: -2 }}
         whileTap={{ scale: 0.97 }}
         transition={{ type: "spring", stiffness: 400, damping: 20 }}
-        className="group relative inline-flex items-center gap-1.5 sm:gap-2 overflow-hidden rounded-full bg-forest text-oat px-5 py-2.5 sm:px-8 sm:py-3.5 font-serif italic tracking-wide text-xs sm:text-base shadow-[0_8px_24px_-12px_rgba(45,59,46,0.6)] hover:bg-ochre hover:text-forest transition-colors duration-200"
+        className="group relative inline-flex items-center gap-1.5 sm:gap-2 overflow-hidden rounded-full bg-forest text-oat px-5 py-2.5 sm:px-8 sm:py-3.5 font-serif italic tracking-wide text-xs sm:text-base shadow-[0_8px_24px_-12px_rgba(20,20,20,0.6)] hover:bg-ochre hover:text-oat transition-colors duration-200"
       >
         {/* shine sweep on hover */}
         <span

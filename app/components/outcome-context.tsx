@@ -1,27 +1,46 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useCallback, useContext, useState } from "react";
 
-// alik never forces the outcome — so the outcome keeps changing.
-export const OUTCOMES = ["romantic", "friendship", "community", "family"] as const;
-export type Outcome = (typeof OUTCOMES)[number];
+// Constellation categories — which "rooms" light up for a given outcome.
+export const CATEGORIES = ["romantic", "friendship", "community", "family"] as const;
+export type Outcome = (typeof CATEGORIES)[number];
 
-const ROTATE_MS = 3400;
+// One source of truth: each feeling pairs with what that connection can quietly
+// become. "Feel ___" and "some connections become ___" advance together, so the
+// two lines always read as a couplet.
+export type Pair = { feel: string; become: string; category: Outcome };
 
-type OutcomeState = { index: number; outcome: Outcome };
+export const PAIRS: Pair[] = [
+  { feel: "seen", become: "friendship", category: "friendship" },
+  { feel: "met", become: "a romance", category: "romantic" },
+  { feel: "found", become: "home", category: "family" },
+  { feel: "known", become: "community", category: "community" },
+  { feel: "chosen", become: "family", category: "family" },
+];
 
-const OutcomeCtx = createContext<OutcomeState>({ index: 0, outcome: OUTCOMES[0] });
+type OutcomeState = {
+  index: number;
+  pair: Pair;
+  outcome: Outcome;
+  advance: () => void;
+};
+
+const OutcomeCtx = createContext<OutcomeState>({
+  index: 0,
+  pair: PAIRS[0],
+  outcome: PAIRS[0].category,
+  advance: () => {},
+});
 
 export function OutcomeProvider({ children }: { children: React.ReactNode }) {
   const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const t = setInterval(() => setIndex((i) => (i + 1) % OUTCOMES.length), ROTATE_MS);
-    return () => clearInterval(t);
-  }, []);
+  // Stable so the typewriter can call it from an effect without re-arming timers.
+  const advance = useCallback(() => setIndex((i) => (i + 1) % PAIRS.length), []);
+  const pair = PAIRS[index];
 
   return (
-    <OutcomeCtx.Provider value={{ index, outcome: OUTCOMES[index] }}>
+    <OutcomeCtx.Provider value={{ index, pair, outcome: pair.category, advance }}>
       {children}
     </OutcomeCtx.Provider>
   );

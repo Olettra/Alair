@@ -1,7 +1,11 @@
 "use client";
 
-import { AnimatePresence, motion } from "motion/react";
-import { useOutcome } from "./outcome-context";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { PAIRS, useOutcome } from "./outcome-context";
+
+// Widest feeling, used as an invisible sizer so "Feel" never shifts as letters type.
+const FEELING_SIZER = PAIRS.reduce((a, p) => (p.feel.length > a.length ? p.feel : a), "");
 
 const container = {
   hidden: {},
@@ -21,7 +25,7 @@ const line = {
 };
 
 export function HeroPhrase() {
-  const { outcome } = useOutcome();
+  const { pair } = useOutcome();
 
   return (
     <motion.div
@@ -34,15 +38,21 @@ export function HeroPhrase() {
         variants={line}
         className="font-sans text-[10px] sm:text-xs uppercase tracking-[0.22em] text-forest/45 whitespace-nowrap"
       >
-        no profiles · no swiping · no algorithms
+        AI personas are the future
       </motion.p>
 
       <motion.h1
         variants={line}
-        className="font-serif text-forest text-[clamp(1.05rem,4.4vw,3.4rem)] leading-[1.18] tracking-tight text-center px-3 max-w-[22ch]"
+        aria-label="Feel seen. Feel met. Feel found."
+        className="font-serif text-forest text-[clamp(1.7rem,6.2vw,4.2rem)] leading-[1.08] tracking-tight text-center px-3"
       >
-        AI-curated rooms for{" "}
-        <span className="italic text-ochre">real-life connection</span>.
+        <span
+          aria-hidden="true"
+          className="inline-flex items-baseline justify-center gap-[0.3em]"
+        >
+          <span>Feel</span>
+          <TypedFeeling />
+        </span>
       </motion.h1>
 
       <motion.div
@@ -50,16 +60,64 @@ export function HeroPhrase() {
         className="flex items-center justify-center gap-x-2 sm:gap-x-3 font-serif text-forest text-[clamp(0.78rem,2.1vw,1.4rem)] px-3 whitespace-nowrap max-w-full"
       >
         <span>some connections become</span>
-        <KeywordPill text={outcome} />
+        <KeywordPill text={pair.become} />
       </motion.div>
-
-      <motion.p
-        variants={line}
-        className="font-serif italic text-forest/70 text-[clamp(0.72rem,2.4vw,1.15rem)] text-center px-4"
-      >
-        alik doesn&rsquo;t force the outcome.
-      </motion.p>
     </motion.div>
+  );
+}
+
+// Typewriter: types a feeling, holds a beat, deletes, then advances the shared
+// index — which moves the "some connections become ___" line in lockstep.
+// Calm, unhurried timing. Falls back to a gentle word-swap when motion is reduced.
+function TypedFeeling() {
+  const reduce = useReducedMotion();
+  const { pair, advance } = useOutcome();
+  const target = pair.feel;
+  const [text, setText] = useState("");
+  const [deleting, setDeleting] = useState(false);
+
+  useEffect(() => {
+    if (reduce) return;
+
+    // fully typed → hold a long, easy beat before erasing
+    if (!deleting && text === target) {
+      const t = setTimeout(() => setDeleting(true), 2800);
+      return () => clearTimeout(t);
+    }
+    // fully erased → pause, then advance both lines together
+    if (deleting && text === "") {
+      const t = setTimeout(() => {
+        setDeleting(false);
+        advance();
+      }, 600);
+      return () => clearTimeout(t);
+    }
+
+    const next = deleting
+      ? target.slice(0, text.length - 1)
+      : target.slice(0, text.length + 1);
+    const t = setTimeout(() => setText(next), deleting ? 60 : 115);
+    return () => clearTimeout(t);
+  }, [text, target, deleting, reduce, advance]);
+
+  // Reduced motion: no per-letter typing — just swap the whole word slowly.
+  useEffect(() => {
+    if (!reduce) return;
+    const t = setInterval(advance, 3600);
+    return () => clearInterval(t);
+  }, [reduce, advance]);
+
+  const shown = reduce ? target : text;
+
+  return (
+    <span className="relative inline-block italic text-ochre" aria-hidden="true">
+      {/* invisible sizer keeps the headline from shifting as letters appear */}
+      <span className="invisible">{FEELING_SIZER}</span>
+      <span className="absolute left-0 top-0 whitespace-nowrap">
+        {shown}
+        <span className="type-caret" />
+      </span>
+    </span>
   );
 }
 

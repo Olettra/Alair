@@ -77,7 +77,7 @@ export function InfoDialog({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.98 }}
             transition={{ type: "spring", stiffness: 320, damping: 30, mass: 0.8 }}
-            className="relative w-full md:max-w-[460px] mx-0 md:mx-4 bg-oat text-forest rounded-t-3xl md:rounded-2xl ring-1 ring-forest/20 shadow-[0_30px_80px_-20px_rgba(45,59,46,0.5),0_0_0_1px_rgba(45,59,46,0.05)] max-h-[85svh] flex flex-col font-serif"
+            className="relative w-full md:max-w-[460px] mx-0 md:mx-4 bg-oat text-forest rounded-t-3xl md:rounded-2xl ring-1 ring-forest/20 shadow-[0_30px_80px_-20px_rgba(20,20,20,0.5),0_0_0_1px_rgba(20,20,20,0.05)] max-h-[85svh] flex flex-col font-serif"
           >
         <div className="md:hidden flex justify-center pt-3 pb-1">
           <span className="block w-10 h-1.5 rounded-full bg-forest/20" />

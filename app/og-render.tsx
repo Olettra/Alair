@@ -7,9 +7,9 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt = "alik — AI-curated rooms for real-life connection";
 
-const OAT = "#efe8d7";
-const FOREST = "#2d3b2e";
-const OCHRE = "#c8924a";
+const OAT = "#ffffff";
+const FOREST = "#161616";
+const OCHRE = "#8a8a8a";
 
 type Font = {
   name: string;
@@ -70,7 +70,7 @@ export default async function OgImage() {
             display: "flex",
             borderRadius: 9999,
             backgroundImage:
-              "radial-gradient(circle at 35% 35%, rgba(200,146,74,0.32), rgba(200,146,74,0) 65%)",
+              "radial-gradient(circle at 35% 35%, rgba(138,138,138,0.32), rgba(138,138,138,0) 65%)",
           }}
         />
         <div
@@ -83,7 +83,7 @@ export default async function OgImage() {
             display: "flex",
             borderRadius: 9999,
             backgroundImage:
-              "radial-gradient(circle at 65% 65%, rgba(45,59,46,0.20), rgba(45,59,46,0) 65%)",
+              "radial-gradient(circle at 65% 65%, rgba(20,20,20,0.16), rgba(20,20,20,0) 65%)",
           }}
         />
 
@@ -111,7 +111,7 @@ export default async function OgImage() {
               display: "flex",
               fontSize: 22,
               letterSpacing: 8,
-              color: "rgba(45,59,46,0.45)",
+              color: "rgba(20,20,20,0.45)",
               marginBottom: 26,
             }}
           >
@@ -145,13 +145,13 @@ export default async function OgImage() {
             style={{
               display: "flex",
               fontSize: 27,
-              color: "rgba(45,59,46,0.62)",
+              color: "rgba(20,20,20,0.62)",
               maxWidth: 760,
             }}
           >
             some connections become romantic · friendship · community · family
           </div>
-          <div style={{ display: "flex", fontSize: 24, color: "rgba(45,59,46,0.5)" }}>
+          <div style={{ display: "flex", fontSize: 24, color: "rgba(20,20,20,0.5)" }}>
             alik-ai.com
           </div>
         </div>

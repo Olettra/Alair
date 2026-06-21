@@ -109,7 +109,7 @@ export function Contact() {
             />
             <button
               type="submit"
-              className="w-full inline-flex items-center justify-center rounded-full bg-forest text-oat font-serif italic text-sm py-3 shadow-[0_8px_24px_-12px_rgba(45,59,46,0.6)] hover:bg-ochre hover:text-forest transition-colors duration-200"
+              className="w-full inline-flex items-center justify-center rounded-full bg-forest text-oat font-serif italic text-sm py-3 shadow-[0_8px_24px_-12px_rgba(20,20,20,0.6)] hover:bg-ochre hover:text-oat transition-colors duration-200"
             >
               send message
             </button>
