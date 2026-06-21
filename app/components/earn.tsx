@@ -50,6 +50,12 @@ export function Earn() {
         hashId="earn-dialog"
       >
         <p>
+          you&apos;re early, and the network is still filling in. that&apos;s
+          the point: founding members help alik learn how real people connect,
+          and get paid for it.
+        </p>
+
+        <p>
           most apps make money from your attention. alik thinks you should make
           some of it back.
         </p>

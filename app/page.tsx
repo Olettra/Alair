@@ -40,7 +40,7 @@ export default function Home() {
               className="group inline-flex items-center gap-1.5 text-[clamp(0.68rem,1.9vw,0.88rem)] font-serif italic text-forest/55 hover:text-ochre transition-colors"
             >
               <span aria-hidden="true">✦</span>
-              <span>earn while you wait for your match</span>
+              <span>you&rsquo;re early, earn while the network grows</span>
               <span
                 aria-hidden="true"
                 className="transition-transform duration-200 group-hover:translate-x-0.5"
@@ -75,7 +75,7 @@ export default function Home() {
         <section aria-label="About alik" className="sr-only">
           <h2>What is alik?</h2>
           <p>{ABOUT}</p>
-          <h2>alik — frequently asked questions</h2>
+          <h2>alik frequently asked questions</h2>
           <dl>
             {FAQ.map(({ q, a }) => (
               <div key={q}>

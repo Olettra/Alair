@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "motion/react";
+import { motion, useMotionValue, useReducedMotion, useSpring } from "motion/react";
 import { InfoDialog } from "./info-dialog";
 
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/mlgovgdp";
@@ -13,6 +13,25 @@ export function SignUpCTA() {
     "idle",
   );
   const [error, setError] = useState<string | null>(null);
+
+  // Magnetic pull: the button drifts a little toward the cursor on hover,
+  // spring-eased so it feels weighty rather than twitchy.
+  const reduce = useReducedMotion();
+  const mx = useMotionValue(0);
+  const my = useMotionValue(0);
+  const x = useSpring(mx, { stiffness: 250, damping: 18, mass: 0.5 });
+  const y = useSpring(my, { stiffness: 250, damping: 18, mass: 0.5 });
+
+  function handleMagnet(e: React.MouseEvent<HTMLButtonElement>) {
+    if (reduce) return;
+    const rect = e.currentTarget.getBoundingClientRect();
+    mx.set((e.clientX - (rect.left + rect.width / 2)) * 0.3);
+    my.set((e.clientY - (rect.top + rect.height / 2)) * 0.4);
+  }
+  function resetMagnet() {
+    mx.set(0);
+    my.set(0);
+  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -52,7 +71,10 @@ export function SignUpCTA() {
       <motion.button
         type="button"
         onClick={() => setOpen(true)}
-        whileHover={{ scale: 1.04, y: -2 }}
+        onMouseMove={handleMagnet}
+        onMouseLeave={resetMagnet}
+        style={{ x, y }}
+        whileHover={{ scale: 1.04 }}
         whileTap={{ scale: 0.97 }}
         transition={{ type: "spring", stiffness: 400, damping: 20 }}
         className="group relative inline-flex items-center gap-1.5 sm:gap-2 overflow-hidden rounded-full bg-forest text-oat px-5 py-2.5 sm:px-8 sm:py-3.5 font-serif italic tracking-wide text-xs sm:text-base shadow-[0_8px_24px_-12px_rgba(20,20,20,0.6)] hover:bg-ochre hover:text-oat transition-colors duration-200"

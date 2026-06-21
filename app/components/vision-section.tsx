@@ -18,10 +18,9 @@ export function VisionSection() {
 
         <Reveal delay={0.08}>
           <h2 className="mx-auto mt-6 max-w-3xl font-serif text-forest text-[clamp(1.6rem,3.4vw,2.6rem)] leading-[1.18] tracking-tight">
-            There is a world where alik becomes your{" "}
-            <span className="italic text-ochre">personal concierge</span>,
-            quietly meeting other alik for you, so you no longer have to search,
-            swipe, or guess.
+            Two people, two AIs. Yours learns who you are and goes looking.
+            Theirs does the same. When they find a real fit,{" "}
+            <span className="italic text-ochre">you meet, in person.</span>
           </h2>
         </Reveal>
 

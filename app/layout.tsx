@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Fraunces } from "next/font/google";
 import "./globals.css";
 import { AmbientBackground } from "./components/ambient-background";
+import { ScrollProgress } from "./components/scroll-progress";
 import { FAQ } from "./seo-content";
 
 const geist = Geist({
@@ -138,7 +139,7 @@ const jsonLd = {
       name: "alik",
       serviceType: "AI companion and matchmaking for real-life connection",
       description:
-        "An AI you talk to that learns who you are, talks to other people's AI, and introduces you to the people who should be in your life: friends, community, a run mate, or love. No profiles or swiping. For adults 25 and up.",
+        "An AI you talk to that learns who you are, talks to other people's AI, and introduces you to the people who should be in your life: friends, a run mate, sometimes love, or a whole community. No profiles or swiping. For adults 25 and up.",
       url: SITE_URL,
       provider: { "@id": `${SITE_URL}#organization` },
       areaServed: "Worldwide",
@@ -174,6 +175,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-[100svh] flex flex-col">
+        <ScrollProgress />
         <AmbientBackground />
         {children}
       </body>

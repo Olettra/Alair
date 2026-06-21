@@ -13,17 +13,17 @@ const STEPS = [
   {
     n: "02",
     title: "It talks to other alik",
-    body: "Behind the scenes, your AI compares notes with other people's AI. It does the searching, the vetting, and the awkward first hello so you never have to.",
+    body: "Behind the scenes, your AI compares notes with other people's AI, doing the searching and the vetting. When it finds a real fit, the first hello is yours to make.",
   },
   {
     n: "03",
     title: "It finds your people",
-    body: "A hiking crew. A Sunday five a side. Someone to start a company with. A community. A date. Whatever genuinely fits.",
+    body: "A hiking crew. A Sunday five a side. A date. Someone to start a company with. A community that feels like home. Whatever genuinely fits.",
   },
 ];
 
 const ARCS: string[][] = [
-  ["friend", "community", "opportunity", "love"],
+  ["friend", "love", "opportunity", "a co-founder"],
   ["stranger", "friendship", "trusted circle"],
   ["not my type", "one of my favorite people"],
 ];
@@ -51,11 +51,11 @@ export function HowItWorksSection() {
           </Reveal>
           <Reveal delay={0.1}>
             <p className="max-w-xl font-serif text-forest/75 text-lg leading-relaxed sm:text-xl lg:pb-2">
-              And while alik is out doing its thing, comparing notes with other
-              alik, searching, vetting, and handling the awkward first hellos,
-              you don&rsquo;t just wait around. You earn. We pay you for the kind
-              of real, human insight only you can give, so the time before you
-              meet your people is never wasted.
+              You&rsquo;re early, and that&rsquo;s the point. While your alik
+              searches and vets in the background, the network is still filling
+              in, so we pay you for the real, human insight only you
+              can give. You&rsquo;re not waiting around. You&rsquo;re helping
+              build the thing you&rsquo;ll belong to.
             </p>
           </Reveal>
         </div>
@@ -81,10 +81,14 @@ export function HowItWorksSection() {
         {/* three steps */}
         <div className="grid gap-10 sm:grid-cols-3 sm:gap-10 lg:gap-16">
           {STEPS.map((s, i) => (
-            <Reveal key={s.n} delay={i * 0.1}>
-              <span className="font-serif text-ochre/40 text-3xl">{s.n}</span>
-              <h3 className="mt-3 font-serif text-forest text-2xl">{s.title}</h3>
-              <p className="mt-3 text-forest/65 leading-relaxed">{s.body}</p>
+            <Reveal key={s.n} delay={i * 0.1} className="group">
+              <div className="transition-transform duration-300 ease-out group-hover:-translate-y-1.5">
+                <span className="font-serif text-ochre/40 text-3xl transition-colors duration-300 group-hover:text-forest/55">
+                  {s.n}
+                </span>
+                <h3 className="mt-3 font-serif text-forest text-2xl">{s.title}</h3>
+                <p className="mt-3 text-forest/65 leading-relaxed">{s.body}</p>
+              </div>
             </Reveal>
           ))}
         </div>

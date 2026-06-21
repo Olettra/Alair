@@ -25,14 +25,15 @@ body {
   overflow-x: hidden;
 }
 
-/* Soft layered base wash beneath the animated ambient orbs */
+/* Soft layered base wash beneath the animated ambient orbs — kept bright,
+   with only a whisper of cool gray at the very bottom edge */
 body {
   background:
     radial-gradient(
-      120% 90% at 50% -10%,
-      color-mix(in srgb, var(--color-oat) 92%, white) 0%,
-      var(--color-oat) 55%,
-      color-mix(in srgb, var(--color-oat) 88%, var(--color-forest)) 100%
+      130% 110% at 50% -25%,
+      #ffffff 0%,
+      #ffffff 62%,
+      color-mix(in srgb, var(--color-oat) 97%, var(--color-forest)) 100%
     );
 }
 
@@ -135,8 +136,8 @@ body {
 .orb {
   position: absolute;
   border-radius: 9999px;
-  filter: blur(70px);
-  opacity: 0.55;
+  filter: blur(80px);
+  opacity: 0.3;
   will-change: transform;
 }
 
@@ -147,7 +148,7 @@ body {
   left: -10vmax;
   background: radial-gradient(
     circle at 30% 30%,
-    color-mix(in srgb, var(--color-ochre) 60%, transparent),
+    color-mix(in srgb, var(--color-ochre) 42%, transparent),
     transparent 70%
   );
   animation: drift-1 26s ease-in-out infinite;
@@ -160,10 +161,10 @@ body {
   right: -8vmax;
   background: radial-gradient(
     circle at 70% 70%,
-    color-mix(in srgb, var(--color-forest) 45%, transparent),
+    color-mix(in srgb, var(--color-forest) 28%, transparent),
     transparent 70%
   );
-  opacity: 0.4;
+  opacity: 0.22;
   animation: drift-2 32s ease-in-out infinite;
 }
 
@@ -174,10 +175,10 @@ body {
   left: 55%;
   background: radial-gradient(
     circle at 50% 50%,
-    color-mix(in srgb, var(--color-ochre) 38%, transparent),
+    color-mix(in srgb, var(--color-ochre) 28%, transparent),
     transparent 70%
   );
-  opacity: 0.32;
+  opacity: 0.2;
   animation: drift-3 22s ease-in-out infinite;
 }
 
@@ -217,7 +218,7 @@ body {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.06;
+  opacity: 0.035;
   mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
@@ -330,9 +331,9 @@ body {
   z-index: -1;
   pointer-events: none;
   background: radial-gradient(
-    100% 80% at 50% 45%,
-    transparent 55%,
-    color-mix(in srgb, var(--color-forest) 12%, transparent) 100%
+    100% 85% at 50% 45%,
+    transparent 68%,
+    color-mix(in srgb, var(--color-forest) 5%, transparent) 100%
   );
 }
 

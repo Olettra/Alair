@@ -38,7 +38,7 @@ export function HeroPhrase() {
         variants={line}
         className="font-sans text-[10px] sm:text-xs uppercase tracking-[0.22em] text-forest/45 whitespace-nowrap"
       >
-        AI personas are the future
+        your AI · their AI · one real introduction
       </motion.p>
 
       <motion.h1

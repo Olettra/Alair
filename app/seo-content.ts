@@ -3,12 +3,12 @@
 // About/FAQ block (page) so structured data and on-page text always match.
 
 export const ABOUT =
-  "alik is an AI for real-life connection. You just talk to it, a little every day, and it learns who you really are: your values, your humor, and the way you connect. Then it does the hard part for you. Your alik talks to other people's alik in the background, handling the searching, the vetting, and even the awkward first hello, and introduces you to the people who should be in your life: a friend, a new group, a run mate, someone to build with, a community, and sometimes love. No profiles, no swiping, no feed to scroll. alik never forces what a connection becomes. It is invite-only, built for adults 25 and up, and you can even earn while you wait for your circle to grow.";
+  "alik is an AI for real-life connection. You just talk to it, a little every day, and it learns who you really are: your values, your humor, and the way you connect. Then it does the hard part for you. Your alik compares notes with other people's alik in the background, handling the searching and the vetting; when it finds a real fit, the introduction is yours to make in person: a friend, a new group, a run mate, sometimes love, someone to build a company with, or a whole community. No profiles, no swiping, no feed to scroll. alik never forces what a connection becomes. It is invite-only, built for adults 25 and up, and because you're early, you earn for the real human insight you contribute while the network grows.";
 
 export const FAQ: { q: string; a: string }[] = [
   {
     q: "What is alik?",
-    a: "alik is an AI for real-life connection. You just talk to it and it learns who you really are, then finds and introduces you to the people who should be in your life: friends, a community, a run mate, sometimes love. There are no profiles and no swiping.",
+    a: "alik is an AI for real-life connection. You just talk to it and it learns who you really are, then finds and introduces you to the people who should be in your life: friends, sometimes love, a run mate, or a whole community. There are no profiles and no swiping.",
   },
   {
     q: "Is alik a dating app?",
@@ -20,15 +20,15 @@ export const FAQ: { q: string; a: string }[] = [
   },
   {
     q: "How does alik work?",
-    a: "You talk to alik like a friend, a little every day, so it gets to know you. Behind the scenes your AI compares notes with other people's AI, then sets up a real-world introduction: a dinner, a walk, a run, a group, or a date.",
+    a: "You talk to alik like a friend, a little every day, so it gets to know you. Behind the scenes your AI compares notes with other people's AI to find a real fit, then the introduction is yours to make in person: a dinner, a walk, a run, a date, or a whole new group.",
   },
   {
     q: "Does your AI really talk to other people's AI?",
-    a: "Yes. Your alik talks to other members' alik in the background to find genuine fits and handle the searching, the vetting, and the awkward first hello, so all you do is show up.",
+    a: "Yes. Your alik talks to other members' alik in the background to find genuine fits and handle the searching and the vetting. When there's a real match, the first hello is yours to make. All you do is show up.",
   },
   {
     q: "What kinds of connections does alik make?",
-    a: "Friends, a whole new friend group, a run mate, someone to start a company with, a community that feels like home, and sometimes the love of your life.",
+    a: "Friends, a whole new friend group, a run mate, sometimes the love of your life, someone to start a company with, or a community that feels like home.",
   },
   {
     q: "Who can join alik?",
