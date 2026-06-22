@@ -3,6 +3,7 @@ import { HeroPhrase } from "./components/hero-phrase";
 import { SignUpCTA } from "./components/cta";
 import { Footer } from "./components/footer";
 import { MatchmakingConstellation } from "./components/matchmaking-constellation";
+import { HeroGlow } from "./components/hero-glow";
 import { OutcomeProvider } from "./components/outcome-context";
 import { HowItWorksSection } from "./components/how-it-works-section";
 import { VisionSection } from "./components/vision-section";
@@ -23,6 +24,7 @@ export default function Home() {
         <section className="flex min-h-[100svh] w-full flex-col items-center pt-20 pb-6">
           <OutcomeProvider>
             <div className="relative flex flex-1 w-full items-center justify-center">
+              <HeroGlow />
               <MatchmakingConstellation />
               <div className="relative z-10">
                 <HeroPhrase />
