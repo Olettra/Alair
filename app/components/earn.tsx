@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { InfoDialog, NAV_PILL_CLASS } from "./info-dialog";
+import { EarnFlow } from "./earn-flow";
 
 export function Earn() {
   const [open, setOpen] = useState(false);
@@ -49,6 +50,9 @@ export function Earn() {
         title="earn"
         hashId="earn-dialog"
       >
+        {/* share a real moment → it's approved → you're paid */}
+        <EarnFlow className="mb-2 gap-1" />
+
         <p>
           you&apos;re early, and the network is still filling in. that&apos;s
           the point: founding members help alik learn how real people connect,

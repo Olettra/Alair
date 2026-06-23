@@ -190,7 +190,7 @@ export function MatchmakingConstellation() {
                   className={`relative block ${p.size} overflow-hidden rounded-full`}
                   animate={{
                     scale: lit ? 1.16 : 0.9,
-                    opacity: lit ? 1 : 0.5,
+                    opacity: lit ? 0.78 : 0.34,
                     boxShadow: lit ? RING_LIT : RING_DIM,
                   }}
                   whileHover={{ scale: 1.22, opacity: 1 }}

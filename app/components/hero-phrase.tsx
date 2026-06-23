@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { PAIRS, useOutcome } from "./outcome-context";
+import { FindsYourPeople } from "./finds-your-people";
 
 // Widest feeling, used as an invisible sizer so "Feel" never shifts as letters type.
 const FEELING_SIZER = PAIRS.reduce((a, p) => (p.feel.length > a.length ? p.feel : a), "");
@@ -61,6 +62,11 @@ export function HeroPhrase() {
       >
         <span>some connections become</span>
         <KeywordPill text={pair.become} />
+      </motion.div>
+
+      {/* the idea in motion: you, a soft scan, the few who actually fit */}
+      <motion.div variants={line} className="mt-1 sm:mt-2">
+        <FindsYourPeople className="max-w-[240px] sm:max-w-[300px]" />
       </motion.div>
     </motion.div>
   );

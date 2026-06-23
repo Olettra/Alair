@@ -1,6 +1,7 @@
 import { Reveal } from "./reveal";
 import { CurveUnderline } from "./curve-underline";
 import { TaglineStage } from "./tagline-stage";
+import { CommunityScene } from "./community-scene";
 
 const LABEL = "text-[11px] uppercase tracking-[0.22em] text-forest/45 font-sans";
 
@@ -92,6 +93,17 @@ export function HowItWorksSection() {
             </Reveal>
           ))}
         </div>
+
+        {/* real life, not endless chatting: a few people → a plan → a morning out */}
+        <Reveal className="mt-20 lg:mt-28">
+          <div className="flex flex-col items-center gap-7 text-center">
+            <p className="max-w-md font-serif text-forest/70 text-lg leading-relaxed">
+              A volunteering morning. A long walk. A coffee. alik is built to get
+              you off the screen and into the same room.
+            </p>
+            <CommunityScene />
+          </div>
+        </Reveal>
 
         {/* lower band: flashing polaroid quotes bottom-left, the promise bottom-right */}
         <div className="mt-20 grid items-end gap-12 lg:mt-28 lg:grid-cols-2 lg:gap-16">
