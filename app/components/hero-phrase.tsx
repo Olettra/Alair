@@ -1,154 +1,82 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "motion/react";
-import { PAIRS, useOutcome } from "./outcome-context";
-import { FindsYourPeople } from "./finds-your-people";
+import { motion, useReducedMotion } from "motion/react";
 
-// Widest feeling, used as an invisible sizer so "Feel" never shifts as letters type.
-const FEELING_SIZER = PAIRS.reduce((a, p) => (p.feel.length > a.length ? p.feel : a), "");
+const HEAD = "Don’t get judged by your best photo";
+const TAIL = ", or your perfectly crafted bio.";
 
-const container = {
-  hidden: {},
-  show: {
-    transition: { staggerChildren: 0.14, delayChildren: 0.05 },
-  },
-};
-
-const line = {
-  hidden: { opacity: 0, y: 14, filter: "blur(6px)" },
-  show: {
-    opacity: 1,
-    y: 0,
-    filter: "blur(0px)",
-    transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const },
-  },
-};
+// Shared type scale — the promise reads at the same size as the setup line.
+const TEXT = "text-[clamp(0.72rem,2.7vw,1.35rem)]";
 
 export function HeroPhrase() {
-  const { pair } = useOutcome();
+  const reduce = useReducedMotion();
+  // The lower lines wait until the opening line has finished typing itself.
+  const [revealed, setRevealed] = useState(false);
 
   return (
-    <motion.div
-      className="w-full flex flex-col items-center gap-5 sm:gap-7"
-      variants={container}
-      initial="hidden"
-      animate="show"
-    >
+    <div className="w-full flex flex-col items-center text-center gap-5 sm:gap-6">
+      {/* the setup — small, one line, second clause typed live, comes first */}
       <motion.p
-        variants={line}
-        className="font-sans text-[10px] sm:text-xs uppercase tracking-[0.22em] text-forest/45 whitespace-nowrap"
+        initial={{ opacity: 0, y: 10, filter: "blur(6px)" }}
+        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className={`font-serif italic text-forest/55 leading-snug whitespace-nowrap ${TEXT}`}
       >
-        your AI · their AI · one real introduction
+        {HEAD}
+        <TypedTail onDone={() => setRevealed(true)} />
       </motion.p>
 
-      <motion.h1
-        variants={line}
-        aria-label="Feel seen. Feel met. Feel found."
-        className="font-serif text-forest text-[clamp(1.7rem,6.2vw,4.2rem)] leading-[1.08] tracking-tight text-center px-3"
-      >
-        <span
-          aria-hidden="true"
-          className="inline-flex items-baseline justify-center gap-[0.3em]"
-        >
-          <span>Feel</span>
-          <TypedFeeling />
-        </span>
-      </motion.h1>
-
+      {/* instead + promise — held back until the line above has typed out */}
       <motion.div
-        variants={line}
-        className="flex items-center justify-center gap-x-2 sm:gap-x-3 font-serif text-forest text-[clamp(0.78rem,2.1vw,1.4rem)] px-3 whitespace-nowrap max-w-full"
+        className="flex flex-col items-center gap-4 sm:gap-5"
+        initial={{ opacity: 0, y: 10, filter: "blur(6px)" }}
+        animate={
+          revealed || reduce
+            ? { opacity: 1, y: 0, filter: "blur(0px)" }
+            : { opacity: 0, y: 10, filter: "blur(6px)" }
+        }
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       >
-        <span>some connections become</span>
-        <KeywordPill text={pair.become} />
-      </motion.div>
-
-      {/* the idea in motion: you, a soft scan, the few who actually fit */}
-      <motion.div variants={line} className="mt-1 sm:mt-2">
-        <FindsYourPeople className="max-w-[240px] sm:max-w-[300px]" />
-      </motion.div>
-    </motion.div>
-  );
-}
-
-// Typewriter: types a feeling, holds a beat, deletes, then advances the shared
-// index — which moves the "some connections become ___" line in lockstep.
-// Calm, unhurried timing. Falls back to a gentle word-swap when motion is reduced.
-function TypedFeeling() {
-  const reduce = useReducedMotion();
-  const { pair, advance } = useOutcome();
-  const target = pair.feel;
-  const [text, setText] = useState("");
-  const [deleting, setDeleting] = useState(false);
-
-  useEffect(() => {
-    if (reduce) return;
-
-    // fully typed → hold a long, easy beat before erasing
-    if (!deleting && text === target) {
-      const t = setTimeout(() => setDeleting(true), 2800);
-      return () => clearTimeout(t);
-    }
-    // fully erased → pause, then advance both lines together
-    if (deleting && text === "") {
-      const t = setTimeout(() => {
-        setDeleting(false);
-        advance();
-      }, 600);
-      return () => clearTimeout(t);
-    }
-
-    const next = deleting
-      ? target.slice(0, text.length - 1)
-      : target.slice(0, text.length + 1);
-    const t = setTimeout(() => setText(next), deleting ? 60 : 115);
-    return () => clearTimeout(t);
-  }, [text, target, deleting, reduce, advance]);
-
-  // Reduced motion: no per-letter typing — just swap the whole word slowly.
-  useEffect(() => {
-    if (!reduce) return;
-    const t = setInterval(advance, 3600);
-    return () => clearInterval(t);
-  }, [reduce, advance]);
-
-  const shown = reduce ? target : text;
-
-  return (
-    <span className="relative inline-block italic text-ochre" aria-hidden="true">
-      {/* invisible sizer keeps the headline from shifting as letters appear */}
-      <span className="invisible">{FEELING_SIZER}</span>
-      <span className="absolute left-0 top-0 whitespace-nowrap">
-        {shown}
-        <span className="type-caret" />
-      </span>
-    </span>
-  );
-}
-
-function KeywordPill({ text }: { text: string }) {
-  return (
-    <motion.span
-      aria-live="polite"
-      whileHover={{ scale: 1.04 }}
-      transition={{ type: "spring", stiffness: 400, damping: 22 }}
-      className="relative inline-flex items-center justify-center px-3 py-1 sm:px-5 sm:py-1.5 rounded-full bg-ochre/15 border border-ochre/25 shrink-0 leading-none overflow-hidden"
-    >
-      {/* keep layout stable while the swapping text is absolutely positioned */}
-      <span className="invisible font-serif italic leading-[1.15] py-0.5">{text}</span>
-      <AnimatePresence mode="popLayout" initial={false}>
-        <motion.span
-          key={text}
-          initial={{ opacity: 0, y: 10, filter: "blur(5px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          exit={{ opacity: 0, y: -10, filter: "blur(5px)" }}
-          transition={{ duration: 0.42, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute inset-0 inline-flex items-center justify-center font-serif italic text-ochre leading-[1.15] py-0.5 whitespace-nowrap"
+        <p className="font-sans uppercase tracking-[0.32em] text-ochre text-[9px] sm:text-[10px]">
+          instead
+        </p>
+        <p
+          className={`font-serif text-forest leading-snug lg:whitespace-nowrap ${TEXT}`}
         >
-          {text}
-        </motion.span>
-      </AnimatePresence>
-    </motion.span>
+          let alik find the people who share what you love, and bring you
+          together to <span className="italic text-ochre">experience it.</span>
+        </p>
+      </motion.div>
+    </div>
+  );
+}
+
+// Types out the second clause once, on mount, after a short beat — so the line
+// reads "Don't get judged by your best photo" and then keeps writing itself.
+function TypedTail({ onDone }: { onDone: () => void }) {
+  const reduce = useReducedMotion();
+  const [count, setCount] = useState(0);
+  const typing = !reduce && count < TAIL.length;
+
+  useEffect(() => {
+    if (!typing) return;
+    // hold a beat before the first character so the head registers first
+    const t = setTimeout(() => setCount((c) => c + 1), count === 0 ? 650 : 52);
+    return () => clearTimeout(t);
+  }, [count, typing]);
+
+  // Fire the reveal once the clause is fully typed (or immediately if reduced).
+  useEffect(() => {
+    if (reduce || count >= TAIL.length) onDone();
+  }, [reduce, count, onDone]);
+
+  const shown = reduce ? TAIL : TAIL.slice(0, count);
+
+  return (
+    <span>
+      <span className="text-forest/70">{shown}</span>
+      {typing && <span className="type-caret" />}
+    </span>
   );
 }

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Fraunces } from "next/font/google";
+import { Geist, Fraunces, Caveat } from "next/font/google";
 import "./globals.css";
 import { AmbientBackground } from "./components/ambient-background";
 import { ScrollProgress } from "./components/scroll-progress";
@@ -12,16 +12,22 @@ const geist = Geist({
 
 const fraunces = Fraunces({
   subsets: ["latin"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
   variable: "--font-fraunces",
 });
 
+const caveat = Caveat({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-caveat",
+});
+
 const SITE_URL = "https://alik-ai.com";
 const SITE_NAME = "alik";
-const TITLE = "alik — AI-curated rooms for real-life connection";
+const TITLE = "alik: AI-curated rooms for real-life connection";
 const DESCRIPTION =
-  "alik is an AI for real-life connection. you just talk to it; it learns who you are and finds your people (friends, community, a run mate, sometimes love), then its AI talks to theirs to introduce you in real life. no profiles, no swiping. 25+, invite-only.";
+  "alik is an AI for real-life connection. you just talk to it; it learns who you are and finds your people (friends, community, a run mate, sometimes love), then its AI talks to theirs to introduce you in real life. no profiles, no swiping, no small talk to perform, which makes it a natural fit for autistic and neurodivergent adults. 25+, invite-only.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -45,6 +51,14 @@ export const metadata: Metadata = {
     "find your community",
     "find a run mate",
     "meet people 25 and up",
+    "dating app for autistic adults",
+    "making friends as an autistic adult",
+    "app for people on the spectrum",
+    "neurodivergent friendship app",
+    "autism friendly way to meet people",
+    "meet people without small talk",
+    "ADHD friendly dating app",
+    "social anxiety friendly dating",
   ],
   authors: [{ name: "alik", url: SITE_URL }],
   creator: "alik",
@@ -119,6 +133,15 @@ const jsonLd = {
       logo: `${SITE_URL}/alik-icon.png`,
       description: DESCRIPTION,
       slogan: "AI-curated rooms for real-life connection.",
+      knowsAbout: [
+        "real-life connection",
+        "making friends as an adult",
+        "alternative to dating apps",
+        "meeting people without swiping or profiles",
+        "connection for autistic and neurodivergent adults",
+        "making friends as an autistic adult",
+        "low-pressure ways to meet people without small talk",
+      ],
       sameAs: [
         "https://www.instagram.com/discover_alik/",
         "https://www.tiktok.com/@discover_alik",
@@ -139,13 +162,14 @@ const jsonLd = {
       name: "alik",
       serviceType: "AI companion and matchmaking for real-life connection",
       description:
-        "An AI you talk to that learns who you are, talks to other people's AI, and introduces you to the people who should be in your life: friends, a run mate, sometimes love, or a whole community. No profiles or swiping. For adults 25 and up.",
+        "An AI you talk to that learns who you are, talks to other people's AI, and introduces you to the people who should be in your life: friends, a run mate, sometimes love, or a whole community. No profiles, no swiping, and no small talk to perform, which makes it a natural fit for autistic and neurodivergent adults. For adults 25 and up.",
       url: SITE_URL,
       provider: { "@id": `${SITE_URL}#organization` },
       areaServed: "Worldwide",
       audience: {
         "@type": "Audience",
-        audienceType: "People seeking genuine real-life connection",
+        audienceType:
+          "Adults 25 and up seeking genuine real-life connection, including autistic and neurodivergent people and anyone who finds dating apps, profiles, and small talk draining.",
       },
     },
     {
@@ -166,7 +190,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geist.variable} ${fraunces.variable} h-full antialiased`}
+      className={`${geist.variable} ${fraunces.variable} ${caveat.variable} h-full antialiased`}
     >
       <head>
         <script

@@ -1,6 +1,6 @@
 # alik
 
-> alik is an AI for real-life connection. You just talk to it, a little every day, and it learns who you really are. Then it does the hard part for you: your alik talks to other people's alik in the background, handling the searching, the vetting, and the awkward first hello, and introduces you to the people who should be in your life. Friends, a new group, a run mate, someone to build with, a community, and sometimes love. No profiles, no swiping. alik is invite-only and built for adults 25 and up.
+> alik is an AI for real-life connection. You just talk to it, a little every day, and it learns who you really are. Then it does the hard part for you: your alik talks to other people's alik in the background, handling the searching, the vetting, and the awkward first hello, and introduces you to the people who should be in your life. Friends, a new group, a run mate, someone to build with, a community, and sometimes love. No profiles, no swiping, and no small talk to perform, which makes it a natural fit for autistic and neurodivergent adults. alik is invite-only and built for adults 25 and up.
 
 ## About
 
@@ -20,6 +20,7 @@ Dating apps make you search for a person. alik helps you walk into the right roo
 - Your AI talks to other people's AI, removing you from the awkward part.
 - It is built for friendship and community as much as romance.
 - No profiles, no photos to judge, no feed to scroll.
+- Nothing to perform: no small talk and no first move into a room of strangers.
 - It learns and improves the more you use it.
 
 ## Earn while you wait
@@ -29,6 +30,8 @@ While your circle grows, alik can bring you optional paid work: short studies, o
 ## Who it's for
 
 alik is invite-only and built for adults 25 and up.
+
+It is an especially good fit for autistic and neurodivergent adults, and for anyone who finds dating apps, profiles, and small talk draining. There is nothing to perform: no profile, no photos to be judged on, and no first move to make into a room of strangers. You talk to your AI, it connects you around the specific things you love, and it handles the searching and the awkward first hello. You just show up.
 
 ## Links
 

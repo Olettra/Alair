@@ -5,7 +5,7 @@ import { ImageResponse } from "next/og";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "alik — AI-curated rooms for real-life connection";
+export const alt = "alik: AI-curated rooms for real-life connection";
 
 const OAT = "#ffffff";
 const FOREST = "#161616";

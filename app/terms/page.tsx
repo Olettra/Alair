@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "terms of service — alik",
+  title: "terms of service · alik",
   description:
     "the terms and conditions that apply to your use of alik.",
   alternates: { canonical: "https://alik-ai.com/terms" },
@@ -213,8 +213,8 @@ export default function TermsPage() {
 
           <h2 className="text-xl font-serif pt-6">12. Our Intellectual Property</h2>
           <p>
-            Other than your User Content, the Service — including our name,
-            logo, software, and content — is owned by alik or our licensors.
+            Other than your User Content, the Service, including our name,
+            logo, software, and content, is owned by alik or our licensors.
             You may not copy, modify, or use any part of it except as
             permitted by these Terms.
           </p>

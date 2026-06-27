@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Earn } from "./earn";
 import { Contact } from "./contact";
 import { NAV_PILL_CLASS } from "./info-dialog";
 
@@ -24,7 +23,7 @@ export function Header() {
     <header className="fade-up fixed top-0 inset-x-0 z-50 px-6 md:px-10 py-5 flex items-center justify-between">
       <a
         href="#main"
-        aria-label="alik — back to top"
+        aria-label="alik, back to top"
         className="group inline-flex items-center gap-1.5 font-serif text-forest text-xl tracking-tight"
       >
         alik
@@ -42,7 +41,9 @@ export function Header() {
         <a href="#how-it-works" className={NAV_PILL_CLASS}>
           how it works
         </a>
-        <Earn />
+        <a href="#idea" className={NAV_PILL_CLASS}>
+          idea
+        </a>
         <Contact />
       </nav>
     </header>

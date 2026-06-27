@@ -2,11 +2,7 @@ import { Header } from "./components/header";
 import { HeroPhrase } from "./components/hero-phrase";
 import { SignUpCTA } from "./components/cta";
 import { Footer } from "./components/footer";
-import { MatchmakingConstellation } from "./components/matchmaking-constellation";
-import { HeroGlow } from "./components/hero-glow";
-import { OutcomeProvider } from "./components/outcome-context";
 import { HowItWorksSection } from "./components/how-it-works-section";
-import { VisionSection } from "./components/vision-section";
 import { ABOUT, FAQ } from "./seo-content";
 
 export default function Home() {
@@ -21,54 +17,25 @@ export default function Home() {
       <Header />
       <main id="main">
         {/* ── homepage — first full screen ── */}
-        <section className="flex min-h-[100svh] w-full flex-col items-center pt-20 pb-6">
-          <OutcomeProvider>
-            <div className="relative flex flex-1 w-full items-center justify-center">
-              <HeroGlow />
-              <MatchmakingConstellation />
-              <div className="relative z-10">
-                <HeroPhrase />
-              </div>
-            </div>
-          </OutcomeProvider>
-
-          <div
-            className="fade-up flex flex-col items-center gap-3 pb-2"
-            style={{ animationDelay: "650ms" }}
-          >
-            <SignUpCTA />
-            <a
-              href="#earn"
-              className="group inline-flex items-center gap-1.5 text-[clamp(0.68rem,1.9vw,0.88rem)] font-serif italic text-forest/55 hover:text-ochre transition-colors"
-            >
-              <span aria-hidden="true">✦</span>
-              <span>you&rsquo;re early, earn while the network grows</span>
-              <span
-                aria-hidden="true"
-                className="transition-transform duration-200 group-hover:translate-x-0.5"
-              >
-                →
-              </span>
-            </a>
+        <section className="flex min-h-[100svh] w-full flex-col items-center px-6 pt-24 pb-10">
+          {/* the message, centered in the open space */}
+          <div className="flex w-full flex-1 items-center justify-center">
+            <HeroPhrase />
           </div>
 
-          {/* gentle invitation to scroll into the story */}
-          <a
-            href="#how-it-works"
-            className="fade-up mt-6 inline-flex flex-col items-center gap-1 text-[10px] uppercase tracking-[0.22em] text-forest/40 hover:text-ochre transition-colors"
-            style={{ animationDelay: "900ms" }}
+          {/* invite + disclaimer, anchored at the bottom */}
+          <div
+            className="fade-up flex flex-col items-center gap-3"
+            style={{ animationDelay: "2200ms" }}
           >
-            how it works
-            <span aria-hidden="true" className="animate-bounce text-sm">
-              ↓
-            </span>
-          </a>
+            <SignUpCTA />
+            <p className="font-script text-forest/55 text-xl sm:text-2xl leading-none">
+              this is not a dating service
+            </p>
+          </div>
         </section>
 
-        {/* ── the vision ── */}
-        <VisionSection />
-
-        {/* ── the story ── */}
+        {/* ── the idea, how it works, the promise — one quiet section ── */}
         <HowItWorksSection />
 
         {/* Crawlable answer-first content for search engines and AI models.

@@ -3,7 +3,7 @@
 // About/FAQ block (page) so structured data and on-page text always match.
 
 export const ABOUT =
-  "alik is an AI for real-life connection. You just talk to it, a little every day, and it learns who you really are: your values, your humor, and the way you connect. Then it does the hard part for you. Your alik compares notes with other people's alik in the background, handling the searching and the vetting; when it finds a real fit, the introduction is yours to make in person: a friend, a new group, a run mate, sometimes love, someone to build a company with, or a whole community. No profiles, no swiping, no feed to scroll. alik never forces what a connection becomes. It is invite-only, built for adults 25 and up, and because you're early, you earn for the real human insight you contribute while the network grows.";
+  "alik is an AI for real-life connection. You just talk to it, a little every day, and it learns who you really are: your values, your humor, and the way you connect. Then it does the hard part for you. Your alik compares notes with other people's alik in the background, handling the searching and the vetting; when it finds a real fit, the introduction is yours to make in person: a friend, a new group, a run mate, sometimes love, someone to build a company with, or a whole community. No profiles, no swiping, no feed to scroll. Because there is nothing to perform, no profile, no photos to be judged on, and no small talk to push through, alik is a natural fit for autistic and neurodivergent adults: connections form around the specific things you love, and your alik handles the searching and the awkward first hello so you can just show up. alik never forces what a connection becomes. It is invite-only, built for adults 25 and up, and because you're early, you earn for the real human insight you contribute while the network grows.";
 
 export const FAQ: { q: string; a: string }[] = [
   {
@@ -29,6 +29,14 @@ export const FAQ: { q: string; a: string }[] = [
   {
     q: "What kinds of connections does alik make?",
     a: "Friends, a whole new friend group, a run mate, sometimes the love of your life, someone to start a company with, or a community that feels like home.",
+  },
+  {
+    q: "Is alik good for autistic and neurodivergent adults?",
+    a: "Yes. alik is built for the way you actually connect. There are no profiles to perform, no photos to be judged on, and no small talk to push through. You talk to your AI, it connects you with people around the specific things you love, and it handles the searching and the awkward first hello. For many autistic and neurodivergent adults, that removes the most draining parts of meeting people.",
+  },
+  {
+    q: "I find dating apps, profiles, and small talk exhausting. Is alik different?",
+    a: "That is exactly who alik is for. You never swipe, never craft a profile, and never have to make the first move into a room of strangers. Your AI does the finding and the vetting and introduces you around a shared interest, so you just show up. It is a calmer, lower-pressure way to make friends or find a relationship, whether you are autistic, have ADHD, are socially anxious, or simply tired of performing online.",
   },
   {
     q: "Who can join alik?",

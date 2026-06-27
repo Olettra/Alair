@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "privacy notice — alik",
+  title: "privacy notice · alik",
   description:
     "how alik collects, uses, and protects your personal information.",
   alternates: { canonical: "https://alik-ai.com/privacy" },
@@ -17,8 +17,8 @@ export default function PrivacyPage() {
 
         <section className="space-y-6 text-[15px] leading-relaxed text-white/90">
           <p>
-            alik is a platform that curates real-life experiences — coffee
-            meetups and runs — to help foster meaningful connections. This
+            alik is a platform that curates real-life experiences (coffee
+            meetups and runs) to help foster meaningful connections. This
             Privacy Notice explains how alik (&ldquo;alik&rdquo;, &ldquo;we&rdquo;,
             &ldquo;us&rdquo; or &ldquo;our&rdquo;) collects your personal
             information and what we do with it, including how we use, share,
@@ -71,7 +71,7 @@ export default function PrivacyPage() {
               <strong>Order and payment information:</strong> if you book an
               experience or subscription, we collect billing details. Card
               numbers are processed directly by our third-party payment provider
-              (Stripe) — we never store full card numbers on our systems.
+              (Stripe); we never store full card numbers on our systems.
             </li>
             <li>
               <strong>Event information:</strong> details collected when you
@@ -83,7 +83,7 @@ export default function PrivacyPage() {
             </li>
             <li>
               <strong>Job application information:</strong> if you apply to
-              join our team — name, contact info, resume, and any details you
+              join our team: name, contact info, resume, and any details you
               share with us.
             </li>
           </ul>
@@ -163,8 +163,8 @@ export default function PrivacyPage() {
             </li>
             <li>
               <strong>Service providers:</strong> vendors that help us run alik
-              — hosting, analytics, payment processing, customer support, and
-              communications — under contracts that require them to protect
+              (hosting, analytics, payment processing, customer support, and
+              communications) under contracts that require them to protect
               your information.
             </li>
             <li>
@@ -193,8 +193,8 @@ export default function PrivacyPage() {
 
           <h2 className="text-xl font-serif pt-6">4. Data Security</h2>
           <p>
-            We use technical, administrative, and physical safeguards — such as
-            encryption in transit, access controls, and regular reviews — to
+            We use technical, administrative, and physical safeguards, such as
+            encryption in transit, access controls, and regular reviews, to
             protect your personal information. No system is perfectly secure,
             but we work hard to reduce the risk of unauthorized access.
           </p>
@@ -225,7 +225,7 @@ export default function PrivacyPage() {
               <strong>Access, correction, and deletion:</strong> contact us to
               review, update, or delete your information. Some jurisdictions
               (including California, Virginia, Colorado, Connecticut, and the
-              EEA/UK) grant additional rights — we will honor verified requests
+              EEA/UK) grant additional rights; we will honor verified requests
               in line with applicable law.
             </li>
             <li>
@@ -257,7 +257,7 @@ export default function PrivacyPage() {
           </h2>
           <p>
             Our Services may link to third-party websites and apps. We are not
-            responsible for the privacy practices of those third parties — we
+            responsible for the privacy practices of those third parties; we
             encourage you to read their notices.
           </p>
 
