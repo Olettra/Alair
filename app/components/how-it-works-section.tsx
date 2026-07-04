@@ -87,7 +87,7 @@ const PinIcon = () => (
 
 // The journey, three beats, labels only.
 const STEPS = [
-  { icon: <ChatIcon />, label: "You talk. Alair always listens." },
+  { icon: <ChatIcon />, label: "You talk. alair always listens." },
   { icon: <HeartIcon />, label: "It picks up on what you love." },
   { icon: <PinIcon />, label: "It finds someone into it too." },
 ];
