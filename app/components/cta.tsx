@@ -77,12 +77,12 @@ export function SignUpCTA() {
         whileHover={{ scale: 1.04 }}
         whileTap={{ scale: 0.97 }}
         transition={{ type: "spring", stiffness: 400, damping: 20 }}
-        className="group relative inline-flex items-center gap-1.5 sm:gap-2 overflow-hidden rounded-full bg-forest text-oat px-5 py-2.5 sm:px-8 sm:py-3.5 font-serif italic tracking-wide text-xs sm:text-base shadow-[0_8px_24px_-12px_rgba(20,20,20,0.6)] hover:bg-ochre hover:text-oat transition-colors duration-200"
+        className="group relative inline-flex items-center gap-1.5 sm:gap-2 overflow-hidden rounded-full bg-sienna text-oat px-5 py-2.5 sm:px-8 sm:py-3.5 font-serif italic tracking-wide text-xs sm:text-base shadow-[0_8px_24px_-12px_rgba(120,44,26,0.5)] hover:bg-sienna-hover transition-colors duration-200"
       >
         {/* shine sweep on hover */}
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-oat/25 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
+          className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent transition-transform duration-700 ease-out group-hover:translate-x-full"
         />
         <span className="relative">REQUEST AN INVITE</span>
         <span
@@ -100,7 +100,7 @@ export function SignUpCTA() {
             <button
               type="button"
               onClick={handleClose}
-              className="mt-5 inline-flex items-center justify-center rounded-full bg-forest text-oat px-6 py-2.5 text-sm font-serif italic hover:bg-ochre hover:text-forest transition-colors"
+              className="mt-5 inline-flex items-center justify-center rounded-full bg-sienna text-oat px-6 py-2.5 text-sm font-serif italic hover:bg-sienna-hover transition-colors"
             >
               close
             </button>
@@ -108,7 +108,7 @@ export function SignUpCTA() {
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4" noValidate>
             <p className="text-[14px] md:text-[15px]">
-              alik is invite-only. leave your email to be considered for the
+              alair is invite-only. leave your email to be considered for the
               next round.
             </p>
             <label htmlFor="signup-email" className="sr-only">
@@ -134,7 +134,7 @@ export function SignUpCTA() {
             <button
               type="submit"
               disabled={status === "submitting" || !email}
-              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-forest text-oat px-6 py-3 font-serif italic tracking-wide hover:bg-ochre hover:text-forest transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+              className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-sienna text-oat px-6 py-3 font-serif italic tracking-wide hover:bg-sienna-hover transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {status === "submitting" ? "sending…" : "request invite"}
             </button>

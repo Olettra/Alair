@@ -23,24 +23,24 @@ const caveat = Caveat({
   variable: "--font-caveat",
 });
 
-const SITE_URL = "https://alik-ai.com";
-const SITE_NAME = "alik";
-const TITLE = "alik: AI-curated rooms for real-life connection";
+const SITE_URL = "https://alair-ai.com";
+const SITE_NAME = "alair";
+const TITLE = "alair: AI-curated rooms for real-life connection";
 const DESCRIPTION =
-  "alik is an AI for real-life connection. you just talk to it; it learns who you are and finds your people (friends, community, a run mate, sometimes love), then its AI talks to theirs to introduce you in real life. no profiles, no swiping, no small talk to perform, which makes it a natural fit for autistic and neurodivergent adults. 25+, invite-only.";
+  "alair is an AI for real-life connection. you just talk to it; it learns who you are and finds your people (friends, community, a run mate, sometimes love), then its AI talks to theirs to introduce you in real life. no profiles, no swiping, no small talk to perform, which makes it a natural fit for autistic and neurodivergent adults. 25+, invite-only.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: TITLE,
-    template: "%s · alik",
+    template: "%s · alair",
   },
   description: DESCRIPTION,
   applicationName: SITE_NAME,
   generator: "Next.js",
   keywords: [
-    "alik",
-    "discover alik",
+    "alair",
+    "discover alair",
     "AI for real-life connection",
     "AI matchmaker",
     "AI that finds friends",
@@ -60,9 +60,9 @@ export const metadata: Metadata = {
     "ADHD friendly dating app",
     "social anxiety friendly dating",
   ],
-  authors: [{ name: "alik", url: SITE_URL }],
-  creator: "alik",
-  publisher: "alik",
+  authors: [{ name: "alair", url: SITE_URL }],
+  creator: "alair",
+  publisher: "alair",
   category: "social",
   referrer: "origin-when-cross-origin",
   formatDetection: {
@@ -94,9 +94,9 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
-      { url: "/alik-icon.svg", type: "image/svg+xml" },
+      { url: "/alair-icon.svg", type: "image/svg+xml" },
     ],
-    apple: [{ url: "/alik-icon.png", sizes: "512x512", type: "image/png" }],
+    apple: [{ url: "/alair-icon.png", sizes: "512x512", type: "image/png" }],
   },
   manifest: "/manifest.webmanifest",
   robots: {
@@ -114,8 +114,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#161616" },
+    { media: "(prefers-color-scheme: light)", color: "#f2ebe0" },
+    { media: "(prefers-color-scheme: dark)", color: "#2e2723" },
   ],
   width: "device-width",
   initialScale: 1,
@@ -130,7 +130,7 @@ const jsonLd = {
       "@id": `${SITE_URL}#organization`,
       name: SITE_NAME,
       url: SITE_URL,
-      logo: `${SITE_URL}/alik-icon.png`,
+      logo: `${SITE_URL}/alair-icon.png`,
       description: DESCRIPTION,
       slogan: "AI-curated rooms for real-life connection.",
       knowsAbout: [
@@ -143,8 +143,8 @@ const jsonLd = {
         "low-pressure ways to meet people without small talk",
       ],
       sameAs: [
-        "https://www.instagram.com/discover_alik/",
-        "https://www.tiktok.com/@discover_alik",
+        "https://www.instagram.com/discover_alair/",
+        "https://www.tiktok.com/@discover_alair",
       ],
     },
     {
@@ -159,7 +159,7 @@ const jsonLd = {
     {
       "@type": "Service",
       "@id": `${SITE_URL}#service`,
-      name: "alik",
+      name: "alair",
       serviceType: "AI companion and matchmaking for real-life connection",
       description:
         "An AI you talk to that learns who you are, talks to other people's AI, and introduces you to the people who should be in your life: friends, a run mate, sometimes love, or a whole community. No profiles, no swiping, and no small talk to perform, which makes it a natural fit for autistic and neurodivergent adults. For adults 25 and up.",

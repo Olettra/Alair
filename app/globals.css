@@ -1,13 +1,21 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* Monochrome brand: white paper, near-black ink, one neutral gray that
-     blends between them. Token names are kept for stability — oat = white,
-     forest = black, ochre = the gray accent, muted = a softer gray. */
-  --color-oat: #ffffff;
-  --color-forest: #161616;
-  --color-ochre: #8a8a8a;
-  --color-muted: #6f6f6f;
+  /* alair brand: a warm, earthy palette. Soft oatmeal paper, deep espresso
+     ink (never pure black), and two clay accents — terracotta as the
+     signature warmth (glows, the wordmark dot, highlights) and burnt sienna
+     as the action color (buttons, CTAs). Muted olive is the calm support
+     tone. Token names are kept for stability: oat = the oatmeal paper,
+     forest = the espresso ink, ochre = olive, muted = a legible warm taupe,
+     card = a lifted ivory for elevated surfaces (never pure white). */
+  --color-oat: #f2ebe0;
+  --color-forest: #2e2723;
+  --color-ochre: #8a9a5b;
+  --color-muted: #6b5e4c;
+  --color-terracotta: #c67b5c;
+  --color-sienna: #b85c38;
+  --color-sienna-hover: #a04d2e;
+  --color-card: #fbf6ec;
 
   --font-sans: var(--font-geist);
   --font-serif: var(--font-fraunces);
@@ -26,15 +34,15 @@ body {
   overflow-x: hidden;
 }
 
-/* Soft layered base wash beneath the animated ambient orbs — kept bright,
-   with only a whisper of cool gray at the very bottom edge */
+/* Soft layered base wash beneath the animated ambient orbs — a lifted oatmeal
+   at the top, settling into a whisper of deeper clay-brown at the bottom edge */
 body {
   background:
     radial-gradient(
       130% 110% at 50% -25%,
-      #ffffff 0%,
-      #ffffff 62%,
-      color-mix(in srgb, var(--color-oat) 97%, var(--color-forest)) 100%
+      #f8f2e9 0%,
+      var(--color-oat) 62%,
+      color-mix(in srgb, var(--color-oat) 92%, var(--color-forest)) 100%
     );
 }
 
@@ -55,7 +63,7 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-ochre);
+  outline: 2px solid var(--color-forest);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -147,9 +155,10 @@ body {
   height: 46vmax;
   top: -14vmax;
   left: -10vmax;
+  opacity: 0.4;
   background: radial-gradient(
     circle at 30% 30%,
-    color-mix(in srgb, var(--color-ochre) 42%, transparent),
+    color-mix(in srgb, var(--color-terracotta) 55%, transparent),
     transparent 70%
   );
   animation: drift-1 26s ease-in-out infinite;
@@ -296,7 +305,7 @@ body {
   height: 0.82em;
   margin-left: 0.08em;
   transform: translateY(0.1em);
-  background: var(--color-ochre);
+  background: var(--color-forest);
   animation: caret-blink 1.05s steps(1) infinite;
 }
 

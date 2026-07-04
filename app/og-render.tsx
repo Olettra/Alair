@@ -5,11 +5,12 @@ import { ImageResponse } from "next/og";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "alik: AI-curated rooms for real-life connection";
+export const alt = "alair: AI-curated rooms for real-life connection";
 
-const OAT = "#ffffff";
-const FOREST = "#161616";
-const OCHRE = "#8a8a8a";
+const OAT = "#f2ebe0";
+const FOREST = "#2e2723";
+const MUTED = "#6b5e4c";
+const TERRA = "#c67b5c";
 
 type Font = {
   name: string;
@@ -70,7 +71,7 @@ export default async function OgImage() {
             display: "flex",
             borderRadius: 9999,
             backgroundImage:
-              "radial-gradient(circle at 35% 35%, rgba(138,138,138,0.32), rgba(138,138,138,0) 65%)",
+              "radial-gradient(circle at 35% 35%, rgba(198,123,92,0.6), rgba(198,123,92,0) 65%)",
           }}
         />
         <div
@@ -83,7 +84,7 @@ export default async function OgImage() {
             display: "flex",
             borderRadius: 9999,
             backgroundImage:
-              "radial-gradient(circle at 65% 65%, rgba(20,20,20,0.16), rgba(20,20,20,0) 65%)",
+              "radial-gradient(circle at 65% 65%, rgba(138,154,91,0.5), rgba(138,154,91,0) 65%)",
           }}
         />
 
@@ -97,10 +98,10 @@ export default async function OgImage() {
           }}
         >
           <div style={{ display: "flex", fontSize: 42, fontWeight: 600, color: FOREST }}>
-            alik
+            alair
           </div>
           <div
-            style={{ display: "flex", width: 16, height: 16, borderRadius: 9999, backgroundColor: OCHRE }}
+            style={{ display: "flex", width: 16, height: 16, borderRadius: 9999, backgroundColor: TERRA }}
           />
         </div>
 
@@ -111,7 +112,7 @@ export default async function OgImage() {
               display: "flex",
               fontSize: 22,
               letterSpacing: 8,
-              color: "rgba(20,20,20,0.45)",
+              color: "rgba(46,39,35,0.5)",
               marginBottom: 26,
             }}
           >
@@ -128,7 +129,7 @@ export default async function OgImage() {
             }}
           >
             <div style={{ display: "flex" }}>AI-curated rooms for</div>
-            <div style={{ display: "flex", color: OCHRE }}>real-life connection.</div>
+            <div style={{ display: "flex", color: MUTED }}>real-life connection.</div>
           </div>
         </div>
 
@@ -145,14 +146,14 @@ export default async function OgImage() {
             style={{
               display: "flex",
               fontSize: 27,
-              color: "rgba(20,20,20,0.62)",
+              color: "rgba(46,39,35,0.62)",
               maxWidth: 760,
             }}
           >
             some connections become romantic · friendship · community · family
           </div>
-          <div style={{ display: "flex", fontSize: 24, color: "rgba(20,20,20,0.5)" }}>
-            alik-ai.com
+          <div style={{ display: "flex", fontSize: 24, color: "rgba(46,39,35,0.55)" }}>
+            alair-ai.com
           </div>
         </div>
       </div>

@@ -1,8 +1,15 @@
 "use client";
 
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "motion/react";
+
+// Client-only "have we hydrated yet" flag without a setState-in-effect: the
+// snapshot is false on the server and true once React reads it on the client.
+const noopSubscribe = () => () => {};
+function useMounted() {
+  return useSyncExternalStore(noopSubscribe, () => true, () => false);
+}
 
 export function InfoDialog({
   open,
@@ -20,9 +27,7 @@ export function InfoDialog({
   const titleId = useId();
   const descId = useId();
   const panelRef = useRef<HTMLDivElement | null>(null);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
+  const mounted = useMounted();
 
   useEffect(() => {
     if (!open) return;
@@ -77,7 +82,7 @@ export function InfoDialog({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.98 }}
             transition={{ type: "spring", stiffness: 320, damping: 30, mass: 0.8 }}
-            className="relative w-full md:max-w-[460px] mx-0 md:mx-4 bg-oat text-forest rounded-t-3xl md:rounded-2xl ring-1 ring-forest/20 shadow-[0_30px_80px_-20px_rgba(20,20,20,0.5),0_0_0_1px_rgba(20,20,20,0.05)] max-h-[85svh] flex flex-col font-serif"
+            className="relative w-full md:max-w-[460px] mx-0 md:mx-4 bg-card text-forest rounded-t-3xl md:rounded-2xl ring-1 ring-forest/20 shadow-[0_30px_80px_-20px_rgba(46,39,35,0.5),0_0_0_1px_rgba(46,39,35,0.05)] max-h-[85svh] flex flex-col font-serif"
           >
         <div className="md:hidden flex justify-center pt-3 pb-1">
           <span className="block w-10 h-1.5 rounded-full bg-forest/20" />

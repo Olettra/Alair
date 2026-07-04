@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "privacy notice · alik",
+  title: "privacy notice · alair",
   description:
-    "how alik collects, uses, and protects your personal information.",
-  alternates: { canonical: "https://alik-ai.com/privacy" },
+    "how alair collects, uses, and protects your personal information.",
+  alternates: { canonical: "https://alair-ai.com/privacy" },
 };
 
 export default function PrivacyPage() {
@@ -17,9 +17,9 @@ export default function PrivacyPage() {
 
         <section className="space-y-6 text-[15px] leading-relaxed text-white/90">
           <p>
-            alik is a platform that curates real-life experiences (coffee
+            alair is a platform that curates real-life experiences (coffee
             meetups and runs) to help foster meaningful connections. This
-            Privacy Notice explains how alik (&ldquo;alik&rdquo;, &ldquo;we&rdquo;,
+            Privacy Notice explains how alair (&ldquo;alair&rdquo;, &ldquo;we&rdquo;,
             &ldquo;us&rdquo; or &ldquo;our&rdquo;) collects your personal
             information and what we do with it, including how we use, share,
             and protect it. When we say &ldquo;personal information&rdquo; we
@@ -30,10 +30,10 @@ export default function PrivacyPage() {
           <p>
             Our services include our website (
             <a
-              href="https://alik-ai.com"
+              href="https://alair-ai.com"
               className="underline hover:text-white"
             >
-              www.alik-ai.com
+              www.alair-ai.com
             </a>
             ), any other websites that link to this Privacy Notice, our mobile
             experiences, and the related content, platform, products, surveys,
@@ -59,7 +59,7 @@ export default function PrivacyPage() {
             </li>
             <li>
               <strong>Account information:</strong> first and last name, phone
-              number, user ID, and credentials you create when joining alik.
+              number, user ID, and credentials you create when joining alair.
             </li>
             <li>
               <strong>Survey and profile information:</strong> answers you
@@ -162,7 +162,7 @@ export default function PrivacyPage() {
               can meet for coffee or a run.
             </li>
             <li>
-              <strong>Service providers:</strong> vendors that help us run alik
+              <strong>Service providers:</strong> vendors that help us run alair
               (hosting, analytics, payment processing, customer support, and
               communications) under contracts that require them to protect
               your information.
@@ -246,7 +246,7 @@ export default function PrivacyPage() {
             8. International Users
           </h2>
           <p>
-            alik is operated from the United States. If you access the Services
+            alair is operated from the United States. If you access the Services
             from outside the U.S., your information may be transferred to,
             stored, and processed in the U.S. and other countries with
             different data protection laws than your own.
@@ -290,10 +290,10 @@ export default function PrivacyPage() {
           <p>
             Questions or requests about this Privacy Notice? Email us at{" "}
             <a
-              href="mailto:hello@alik-ai.com"
+              href="mailto:hello@alair-ai.com"
               className="underline hover:text-white"
             >
-              hello@alik-ai.com
+              hello@alair-ai.com
             </a>
             .
           </p>
@@ -304,7 +304,7 @@ export default function PrivacyPage() {
             href="/"
             className="inline-block underline text-white/70 hover:text-white text-sm"
           >
-            ← back to alik
+            ← back to alair
           </Link>
         </div>
       </main>

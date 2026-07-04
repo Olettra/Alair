@@ -1,6 +1,4 @@
 import { Header } from "./components/header";
-import { HeroPhrase } from "./components/hero-phrase";
-import { SignUpCTA } from "./components/cta";
 import { Footer } from "./components/footer";
 import { HowItWorksSection } from "./components/how-it-works-section";
 import { ABOUT, FAQ } from "./seo-content";
@@ -15,36 +13,17 @@ export default function Home() {
         Skip to content
       </a>
       <Header />
-      <main id="main">
-        {/* ── homepage — first full screen ── */}
-        <section className="flex min-h-[100svh] w-full flex-col items-center px-6 pt-24 pb-10">
-          {/* the message, centered in the open space */}
-          <div className="flex w-full flex-1 items-center justify-center">
-            <HeroPhrase />
-          </div>
-
-          {/* invite + disclaimer, anchored at the bottom */}
-          <div
-            className="fade-up flex flex-col items-center gap-3"
-            style={{ animationDelay: "2200ms" }}
-          >
-            <SignUpCTA />
-            <p className="font-script text-forest/55 text-xl sm:text-2xl leading-none">
-              this is not a dating service
-            </p>
-          </div>
-        </section>
-
-        {/* ── the idea, how it works, the promise — one quiet section ── */}
+      <main id="main" className="h-[100svh] overflow-hidden">
+        {/* ── the statement, how it works, and the invite — one screen, no scroll ── */}
         <HowItWorksSection />
 
         {/* Crawlable answer-first content for search engines and AI models.
             Mirrors the FAQPage JSON-LD and the in-dialog copy; visually hidden
             but present in the static HTML and the accessibility tree. */}
-        <section aria-label="About alik" className="sr-only">
-          <h2>What is alik?</h2>
+        <section aria-label="About alair" className="sr-only">
+          <h2>What is alair?</h2>
           <p>{ABOUT}</p>
-          <h2>alik frequently asked questions</h2>
+          <h2>alair frequently asked questions</h2>
           <dl>
             {FAQ.map(({ q, a }) => (
               <div key={q}>

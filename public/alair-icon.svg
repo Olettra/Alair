@@ -1,0 +1,21 @@
+<svg width="100%" viewBox="0 0 680 280" role="img" xmlns="http://www.w3.org/2000/svg">
+  <title>alair icon centered</title>
+  <desc>Alair app icon with a soft oatmeal background and a centered deep espresso serif a lettermark</desc>
+
+  <defs>
+    <radialGradient id="mint" cx="34%" cy="26%" r="80%">
+      <stop offset="0%" stop-color="#FBF6EC"/>
+      <stop offset="55%" stop-color="#F2EBE0"/>
+      <stop offset="100%" stop-color="#E7DCC9"/>
+    </radialGradient>
+  </defs>
+
+  <rect x="240" y="40" width="200" height="200" rx="44" fill="url(#mint)" stroke="#8A9A5B" stroke-width="1.5"/>
+
+  <!-- bright spring-green accent glow, echoing the site's living orbs -->
+  <circle cx="308" cy="96" r="30" fill="#C67B5C" opacity="0.55"/>
+
+  <text x="340" y="178" text-anchor="middle" font-family="Georgia, serif" font-size="136" font-weight="400" fill="#2E2723" letter-spacing="-2">a</text>
+
+  <text x="340" y="264" text-anchor="middle" font-family="Georgia, serif" font-size="13" font-weight="400" fill="#6B5E4C">alair</text>
+</svg>
