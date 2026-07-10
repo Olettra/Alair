@@ -125,6 +125,7 @@ function featuredArticleJsonLd() {
     ],
     articleSection: "Modern dating",
     wordCount: 1200,
+    timeRequired: "PT6M",
     about: [
       "dating app fatigue",
       "dating app burnout",
