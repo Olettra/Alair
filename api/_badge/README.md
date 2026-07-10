@@ -31,7 +31,7 @@ modules into routes. `requirements.txt` and `vercel.json` sit at the repo root.
 
 ## Your template
 
-Lives at `api/_badge/assets/alair_founder_badge_template.png`. Swap the file to
+Lives at `api/_badge/assets/whiff_founder_badge_template.png`. Swap the file to
 change the artwork (or set `BADGE_TEMPLATE_PATH`).
 
 ## Run locally

@@ -1,6 +1,6 @@
 export const runtime = "nodejs";
 
-const DEFAULT_WORKER_URL = "https://alair-story-ai.olettrasocials.workers.dev";
+const DEFAULT_WORKER_URL = "https://whiff-story-ai.olettrasocials.workers.dev";
 const MAX_MESSAGES = 12;
 const MAX_MESSAGE_LENGTH = 1200;
 const MAX_REPLY_LENGTH = 2600;
@@ -83,7 +83,7 @@ export async function POST(request: Request) {
 }
 
 function getWorkerUrl() {
-  return process.env.ALAIR_STORY_AI_URL || DEFAULT_WORKER_URL;
+  return process.env.WHIFF_STORY_AI_URL || DEFAULT_WORKER_URL;
 }
 
 function cleanMessages(value: unknown): StoryAiMessage[] {

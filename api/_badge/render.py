@@ -11,11 +11,11 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 # ---- template + output (override with env) ----
-# Drop your PNG at badge-service/assets/alair_founder_badge_template.png,
+# Drop your PNG at badge-service/assets/whiff_founder_badge_template.png,
 # or point BADGE_TEMPLATE_PATH somewhere else.
 TEMPLATE_PATH = os.getenv(
     "BADGE_TEMPLATE_PATH",
-    str(Path(__file__).parent / "assets" / "alair_founder_badge_template.png"),
+    str(Path(__file__).parent / "assets" / "whiff_founder_badge_template.png"),
 )
 OUTPUT_DIR = os.getenv(
     "BADGE_OUTPUT_DIR",
@@ -137,6 +137,6 @@ def save_png(img, founder_label):
     """Also drop a copy on disk (like your original script). Returns the filename."""
     out_dir = Path(OUTPUT_DIR)
     out_dir.mkdir(parents=True, exist_ok=True)
-    filename = f"alair_founder_badge_{founder_label}.png"
+    filename = f"whiff_founder_badge_{founder_label}.png"
     img.save(out_dir / filename)
     return filename

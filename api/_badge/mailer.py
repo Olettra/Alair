@@ -47,7 +47,7 @@ def send_badge_email(to_email, png_bytes, founder_label, hidden_code):
         png_bytes,
         maintype="image",
         subtype="png",
-        filename=f"alair_founder_badge_{founder_label}.png",
+        filename=f"whiff_founder_badge_{founder_label}.png",
     )
 
     context = ssl.create_default_context()
