@@ -38,11 +38,11 @@ export function Header() {
 
   return (
     <header className="fade-up fixed top-0 inset-x-0 z-50 px-6 md:px-10 py-5 flex items-center justify-between">
-      <Link href="/" aria-label="alair home" className="group inline-flex items-center">
+      <Link href="/" aria-label="whiff home" className="group inline-flex items-center">
         {/* eslint-disable-next-line @next/next/no-img-element -- tiny logo asset, no responsive optimization needed */}
         <img
-          src="/logo-mark.png"
-          alt="alair"
+          src="/whiff-wordmark.png"
+          alt="whiff"
           width={303}
           height={145}
           className="h-7 w-auto md:h-8 transition-transform duration-200 group-hover:scale-105"

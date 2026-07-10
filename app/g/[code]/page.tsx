@@ -14,10 +14,10 @@ function Shell({ children }: { children: React.ReactNode }) {
     <main className="relative mx-auto flex min-h-[100svh] w-full max-w-2xl flex-col px-6 py-10 sm:py-14">
       <Link
         href="/"
-        aria-label="alair home"
+        aria-label="whiff home"
         className="mx-auto mb-8 inline-flex items-center gap-2 font-serif text-lg tracking-tight text-forest/80 transition-colors hover:text-forest"
       >
-        alair<span className="h-1.5 w-1.5 rounded-full bg-terracotta" aria-hidden="true" />
+        whiff<span className="h-1.5 w-1.5 rounded-full bg-terracotta" aria-hidden="true" />
       </Link>
       <div className="flex flex-1 flex-col">{children}</div>
     </main>

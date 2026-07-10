@@ -1,5 +1,5 @@
 // The prompt bank for the "are you with your people?" game — a top-of-funnel
-// taste of alair. Each prompt is a fill-in-the-blank that reveals taste and
+// taste of whiff. Each prompt is a fill-in-the-blank that reveals taste and
 // character, and — crucially — is *guessable*: a person who truly knows you
 // should be able to take a real swing at your answer. Voice is warm, candid,
 // a little unguarded. No AI generation; this list is curated and stable.

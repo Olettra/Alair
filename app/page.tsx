@@ -14,10 +14,10 @@ export default function Home() {
         {/* Crawlable answer-first content for search engines and AI models.
             Mirrors the FAQPage JSON-LD and the in-dialog copy; visually hidden
             but present in the static HTML and the accessibility tree. */}
-        <section aria-label="About alair" className="sr-only">
-          <h2>What is alair?</h2>
+        <section aria-label="About whiff" className="sr-only">
+          <h2>What is whiff?</h2>
           <p>{ABOUT}</p>
-          <h2>alair frequently asked questions</h2>
+          <h2>whiff frequently asked questions</h2>
           <dl>
             {FAQ.map(({ q, a }) => (
               <div key={q}>

@@ -2,9 +2,9 @@ import type { MetadataRoute } from "next";
 
 export const dynamic = "force-static";
 
-const SITE_URL = "https://alair-ai.com";
+const SITE_URL = "https://whiff-ai.com";
 
-// AI assistants and answer engines we explicitly welcome, so alair can be
+// AI assistants and answer engines we explicitly welcome, so whiff can be
 // discovered and accurately cited by ChatGPT, Perplexity, Claude, Gemini, etc.
 const AI_CRAWLERS = [
   "GPTBot",

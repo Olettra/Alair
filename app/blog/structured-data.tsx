@@ -63,7 +63,7 @@ function breadcrumbJsonLd() {
       {
         "@type": "ListItem",
         position: 1,
-        name: "alair",
+        name: "whiff",
         item: SITE_URL,
       },
       {
@@ -109,7 +109,7 @@ function featuredArticleJsonLd() {
     image: [OG_IMAGE],
     author: {
       "@type": "Organization",
-      name: "alair",
+      name: "whiff",
       url: SITE_URL,
     },
     publisher: publisher(),
@@ -140,11 +140,11 @@ function featuredArticleJsonLd() {
 function publisher() {
   return {
     "@type": "Organization",
-    name: "alair",
+    name: "whiff",
     url: SITE_URL,
     logo: {
       "@type": "ImageObject",
-      url: `${SITE_URL}/alair-icon.png`,
+      url: `${SITE_URL}/whiff-icon.png`,
     },
   };
 }

@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "terms of service · alair",
+  title: "terms of service · whiff",
   description:
-    "the terms and conditions that apply to your use of alair.",
-  alternates: { canonical: "https://alair-ai.com/terms" },
+    "the terms and conditions that apply to your use of whiff.",
+  alternates: { canonical: "https://whiff-ai.com/terms" },
 };
 
 export default function TermsPage() {
@@ -16,23 +16,23 @@ export default function TermsPage() {
         <p className="text-sm text-white/60 mb-10">Last updated: May 22, 2026</p>
 
         <section className="space-y-6 text-[15px] leading-relaxed text-white/90">
-          <p>Hi, welcome to alair.</p>
+          <p>Hi, welcome to whiff.</p>
           <p>
             This page explains the terms and conditions that apply to your use
             of our service, including our website (
             <a
-              href="https://alair-ai.com"
+              href="https://whiff-ai.com"
               className="underline hover:text-white"
             >
-              alair-ai.com
+              whiff-ai.com
             </a>
             ), any experiences or events you hear about through us
             (collectively, &ldquo;Experiences&rdquo;), and any software,
             content, and other services we make available (collectively, our
             &ldquo;Service&rdquo;). &ldquo;Terms&rdquo; refers to all of the
-            terms and conditions on this page. &ldquo;alair&rdquo;,
+            terms and conditions on this page. &ldquo;whiff&rdquo;,
             &ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo; refers to
-            alair.
+            whiff.
           </p>
           <p>
             By signing up, checking a box, clicking a button, or otherwise
@@ -67,10 +67,10 @@ export default function TermsPage() {
             and up to date. Don&rsquo;t share your credentials or impersonate
             anyone else. Notify us immediately at{" "}
             <a
-              href="mailto:hello@alair-ai.com"
+              href="mailto:hello@whiff-ai.com"
               className="underline hover:text-white"
             >
-              hello@alair-ai.com
+              hello@whiff-ai.com
             </a>{" "}
             if you suspect unauthorized use of your account.
           </p>
@@ -88,7 +88,7 @@ export default function TermsPage() {
           </p>
 
           <h2 className="text-xl font-serif pt-6">
-            4. Communications From alair
+            4. Communications From whiff
           </h2>
           <p>
             By providing your phone number, you agree that we may contact you
@@ -124,7 +124,7 @@ export default function TermsPage() {
           <h2 className="text-xl font-serif pt-6">6. User Content</h2>
           <p>
             You retain ownership of content you submit through the Service
-            (&ldquo;User Content&rdquo;). By submitting it, you grant alair a
+            (&ldquo;User Content&rdquo;). By submitting it, you grant whiff a
             worldwide, royalty-free, sublicensable license to host, store,
             reproduce, modify, display, and distribute that content for the
             purposes of operating, improving, and promoting the Service, and as
@@ -145,7 +145,7 @@ export default function TermsPage() {
 
           <h2 className="text-xl font-serif pt-6">7. Experiences and Safety</h2>
           <p>
-            alair introduces people for in-person experiences like coffee and
+            whiff introduces people for in-person experiences like coffee and
             running. <strong>Your safety is your responsibility.</strong> Use
             good judgment, meet in public, and tell someone you trust where
             you&rsquo;ll be. We do not conduct criminal background checks on
@@ -195,10 +195,10 @@ export default function TermsPage() {
             period using your saved payment method until you cancel. You can
             cancel at any time through your account or by contacting us at{" "}
             <a
-              href="mailto:hello@alair-ai.com"
+              href="mailto:hello@whiff-ai.com"
               className="underline hover:text-white"
             >
-              hello@alair-ai.com
+              hello@whiff-ai.com
             </a>
             . Cancellation takes effect at the end of the current billing
             period, and we do not provide refunds for unused time.
@@ -214,7 +214,7 @@ export default function TermsPage() {
           <h2 className="text-xl font-serif pt-6">12. Our Intellectual Property</h2>
           <p>
             Other than your User Content, the Service, including our name,
-            logo, software, and content, is owned by alair or our licensors.
+            logo, software, and content, is owned by whiff or our licensors.
             You may not copy, modify, or use any part of it except as
             permitted by these Terms.
           </p>
@@ -224,10 +224,10 @@ export default function TermsPage() {
             If you believe content on the Service infringes your copyright,
             please send a notice that complies with the DMCA to{" "}
             <a
-              href="mailto:copyright@alair-ai.com"
+              href="mailto:copyright@whiff-ai.com"
               className="underline hover:text-white"
             >
-              copyright@alair-ai.com
+              copyright@whiff-ai.com
             </a>
             . We may terminate the accounts of repeat infringers.
           </p>
@@ -244,7 +244,7 @@ export default function TermsPage() {
 
           <h2 className="text-xl font-serif pt-6">15. Indemnification</h2>
           <p>
-            You agree to defend, indemnify, and hold harmless alair and its
+            You agree to defend, indemnify, and hold harmless whiff and its
             affiliates, officers, employees, and agents from any claims,
             damages, liabilities, and expenses (including reasonable
             attorneys&rsquo; fees) arising out of or related to your use of the
@@ -268,7 +268,7 @@ export default function TermsPage() {
             17. Limitation of Liability
           </h2>
           <p className="uppercase text-white/80 text-sm">
-            To the maximum extent permitted by law, alair and its affiliates
+            To the maximum extent permitted by law, whiff and its affiliates
             will not be liable for any indirect, incidental, special,
             consequential, exemplary, or punitive damages, or for any loss of
             profits, data, goodwill, or other intangible losses arising out of
@@ -290,10 +290,10 @@ export default function TermsPage() {
             <strong>Informal resolution first:</strong> before filing a claim,
             you agree to try to resolve the dispute informally by contacting{" "}
             <a
-              href="mailto:hello@alair-ai.com"
+              href="mailto:hello@whiff-ai.com"
               className="underline hover:text-white"
             >
-              hello@alair-ai.com
+              hello@whiff-ai.com
             </a>
             . If we can&rsquo;t resolve the dispute within 60 days, you and we
             agree to resolve any remaining dispute through{" "}
@@ -310,10 +310,10 @@ export default function TermsPage() {
             <strong>Opt-out:</strong> you may opt out of the arbitration
             agreement within 30 days of first accepting these Terms by emailing{" "}
             <a
-              href="mailto:hello@alair-ai.com"
+              href="mailto:hello@whiff-ai.com"
               className="underline hover:text-white"
             >
-              hello@alair-ai.com
+              hello@whiff-ai.com
             </a>{" "}
             with your name and the words &ldquo;arbitration opt-out.&rdquo;
           </p>
@@ -328,7 +328,7 @@ export default function TermsPage() {
 
           <h2 className="text-xl font-serif pt-6">20. Miscellaneous</h2>
           <p>
-            These Terms are the entire agreement between you and alair about
+            These Terms are the entire agreement between you and whiff about
             your use of the Service. If any part of these Terms is found
             unenforceable, the rest will remain in effect. Our failure to
             enforce any part of these Terms is not a waiver of our right to do
@@ -339,10 +339,10 @@ export default function TermsPage() {
           <p>
             Questions? Email us at{" "}
             <a
-              href="mailto:hello@alair-ai.com"
+              href="mailto:hello@whiff-ai.com"
               className="underline hover:text-white"
             >
-              hello@alair-ai.com
+              hello@whiff-ai.com
             </a>
             .
           </p>
@@ -353,7 +353,7 @@ export default function TermsPage() {
             href="/"
             className="inline-block underline text-white/70 hover:text-white text-sm"
           >
-            ← back to alair
+            ← back to whiff
           </Link>
         </div>
       </main>

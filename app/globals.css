@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme inline {
-  /* alair brand: a warm, earthy palette. Soft oatmeal paper, deep espresso
+  /* whiff brand: a warm, earthy palette. Soft oatmeal paper, deep espresso
      ink (never pure black), and two clay accents — terracotta as the
      signature warmth (glows, the wordmark dot, highlights) and burnt sienna
      as the action color (buttons, CTAs). Muted olive is the calm support
@@ -124,7 +124,7 @@ body {
   animation: card-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) backwards;
 }
 
-/* ---- alair chat: typing indicator + inline send spinner ---- */
+/* ---- whiff chat: typing indicator + inline send spinner ---- */
 
 .typing-dot {
   display: inline-block;

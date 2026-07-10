@@ -278,13 +278,13 @@ function Reveal({
           want more people who <span className="italic text-sienna">actually get you</span>?
         </p>
         <p className="mt-1 text-[14px] text-muted">
-          that&rsquo;s the whole idea behind alair.
+          that&rsquo;s the whole idea behind whiff.
         </p>
         <a
           href="/"
           className="mt-4 inline-block rounded-full bg-sienna px-7 py-3 font-serif italic tracking-wide text-oat transition-colors hover:bg-sienna-hover"
         >
-          meet alair →
+          meet whiff →
         </a>
       </div>
 

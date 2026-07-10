@@ -2,12 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CreateFlow } from "./create-flow";
 
-const SITE_URL = "https://alair-ai.com";
+const SITE_URL = "https://whiff-ai.com";
 const PAGE_URL = `${SITE_URL}/do-you-know-me`;
 
 const TITLE = "do you know me? a game about who really gets you";
 const DESCRIPTION =
-  "answer one honest prompt, send it to a friend or partner, and see if they can guess what you said. a quick free game from alair about the people who actually get you.";
+  "answer one honest prompt, send it to a friend or partner, and see if they can guess what you said. a quick free game from whiff about the people who actually get you.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     "who knows me best game",
     "free online friendship game",
     "get to know each other game",
-    "alair",
+    "whiff",
     "are you with your people",
   ],
   openGraph: {
     type: "website",
     url: PAGE_URL,
-    siteName: "alair",
+    siteName: "whiff",
     title: TITLE,
     description: DESCRIPTION,
     locale: "en_US",
@@ -64,7 +64,7 @@ const jsonLd = {
     {
       "@type": ["WebApplication", "Game"],
       "@id": `${PAGE_URL}#game`,
-      name: "do you know me? by alair",
+      name: "do you know me? by whiff",
       url: PAGE_URL,
       description: DESCRIPTION,
       applicationCategory: "GameApplication",
@@ -79,9 +79,9 @@ const jsonLd = {
       },
       publisher: {
         "@type": "Organization",
-        name: "alair",
+        name: "whiff",
         url: SITE_URL,
-        logo: { "@type": "ImageObject", url: `${SITE_URL}/alair-icon.png` },
+        logo: { "@type": "ImageObject", url: `${SITE_URL}/whiff-icon.png` },
       },
       isPartOf: { "@id": `${SITE_URL}#website` },
     },
@@ -89,7 +89,7 @@ const jsonLd = {
       "@type": "BreadcrumbList",
       "@id": `${PAGE_URL}#breadcrumb`,
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "alair", item: SITE_URL },
+        { "@type": "ListItem", position: 1, name: "whiff", item: SITE_URL },
         { "@type": "ListItem", position: 2, name: "do you know me?", item: PAGE_URL },
       ],
     },
@@ -110,7 +110,7 @@ const jsonLd = {
           name: "Is it free to play?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes. It is a free, browser-based game from alair. No app download or account is required to play.",
+            text: "Yes. It is a free, browser-based game from whiff. No app download or account is required to play.",
           },
         },
         {
@@ -133,11 +133,11 @@ export default function DoYouKnowMePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Link href="/" aria-label="alair home" className="group inline-flex items-center">
+      <Link href="/" aria-label="whiff home" className="group inline-flex items-center">
         {/* eslint-disable-next-line @next/next/no-img-element -- tiny logo asset, no responsive optimization needed */}
         <img
-          src="/logo-mark.png"
-          alt="alair"
+          src="/whiff-wordmark.png"
+          alt="whiff"
           width={303}
           height={145}
           className="h-7 w-auto md:h-8 transition-transform duration-200 group-hover:scale-105"

@@ -10,7 +10,7 @@ const BOT_REPLY_MAX_HEIGHT = 256;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // The proxy often answers faster than feels human, so the "thinking..." state
-// flashes and gone. Hold it for a random 2-3s minimum so alair reads like it
+// flashes and gone. Hold it for a random 2-3s minimum so whiff reads like it
 // actually paused to consider what you said.
 const THINK_MIN_MS = 2000;
 const THINK_MAX_MS = 3000;
@@ -167,7 +167,7 @@ export function StorySubmissionForm() {
       };
 
       if (!response.ok || !data.reply?.trim()) {
-        throw new Error(data.error || "alair bot could not reply right now.");
+        throw new Error(data.error || "whiff bot could not reply right now.");
       }
 
       await waitOutThinking(startedAt, minThink);
@@ -180,7 +180,7 @@ export function StorySubmissionForm() {
       setBotError(
         error instanceof Error
           ? error.message
-          : "alair bot could not reply right now.",
+          : "whiff bot could not reply right now.",
       );
     } finally {
       setAiState("idle");
@@ -226,7 +226,7 @@ export function StorySubmissionForm() {
       const summaryStory = data.summary?.story?.trim();
 
       if (!response.ok || !summaryStory) {
-        throw new Error(data.error || "alair bot could not make the post.");
+        throw new Error(data.error || "whiff bot could not make the post.");
       }
 
       await waitOutThinking(startedAt, minThink);
@@ -240,7 +240,7 @@ export function StorySubmissionForm() {
       setBotError(
         error instanceof Error
           ? error.message
-          : "alair bot could not make the post.",
+          : "whiff bot could not make the post.",
       );
     } finally {
       setAiState("idle");
@@ -486,7 +486,7 @@ function BotStoryStep({
       ) : (
         <div className="space-y-1.5">
           <label htmlFor="bot-reply" className="sr-only">
-            Message to alair
+            Message to whiff
           </label>
           <div className="relative">
             <textarea
@@ -496,7 +496,7 @@ function BotStoryStep({
               value={reply}
               onChange={(event) => onReplyChange(event.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Tell alair what happened..."
+              placeholder="Tell whiff what happened..."
               className={`${inputClass} max-h-64 min-h-32 resize-none overflow-hidden py-3 pr-14 leading-[1.6]`}
             />
             <button
@@ -524,7 +524,7 @@ function BotStoryStep({
       {aiState === "summarizing" && (
         <p className="flex items-center gap-2 rounded-2xl border border-sienna/20 bg-sienna/10 p-3 text-sm leading-relaxed text-forest/76">
           <span className="typing-spinner-sienna" aria-hidden="true" />
-          alair is turning it into an archive post...
+          whiff is turning it into an archive post...
         </p>
       )}
 
@@ -773,7 +773,7 @@ function TypingBubble() {
       <div
         className="inline-flex items-center gap-1.5 py-2"
         role="status"
-        aria-label="alair is thinking"
+        aria-label="whiff is thinking"
       >
         <span className="typing-dot" />
         <span className="typing-dot" />

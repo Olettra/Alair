@@ -5,7 +5,7 @@ import { ImageResponse } from "next/og";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "alair: AI-curated rooms for real-life connection";
+export const alt = "whiff: AI-curated rooms for real-life connection";
 
 const OAT = "#f2ebe0";
 const FOREST = "#2e2723";
@@ -98,7 +98,7 @@ export default async function OgImage() {
           }}
         >
           <div style={{ display: "flex", fontSize: 42, fontWeight: 600, color: FOREST }}>
-            alair
+            whiff
           </div>
           <div
             style={{ display: "flex", width: 16, height: 16, borderRadius: 9999, backgroundColor: TERRA }}
@@ -153,7 +153,7 @@ export default async function OgImage() {
             some connections become romantic · friendship · community · family
           </div>
           <div style={{ display: "flex", fontSize: 24, color: "rgba(46,39,35,0.55)" }}>
-            alair-ai.com
+            whiff-ai.com
           </div>
         </div>
       </div>

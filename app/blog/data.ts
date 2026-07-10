@@ -1,4 +1,4 @@
-export const SITE_URL = "https://alair-ai.com";
+export const SITE_URL = "https://whiff-ai.com";
 export const BLOG_URL = `${SITE_URL}/blog`;
 export const FEATURED_ESSAY_PATH = "/blog/dating-app-fatigue";
 export const FEATURED_ESSAY_URL = `${SITE_URL}${FEATURED_ESSAY_PATH}`;

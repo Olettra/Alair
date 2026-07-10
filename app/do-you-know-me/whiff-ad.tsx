@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { AnimatedWord, useWordCycle } from "@/app/components/cycling-word";
 
-// A little alair plug for this page. Reuses the homepage's flipping-words effect
-// (cycling-word), reworded for here: "With alair, meet your ___ ___."
+// A little whiff plug for this page. Reuses the homepage's flipping-words effect
+// (cycling-word), reworded for here: "With whiff, meet your ___ ___."
 // Activity + role advance together off one shared index, like the homepage line.
 // Words are kept short so the line fits on one row on mobile.
 const ACTIVITIES = [
@@ -32,7 +32,7 @@ const ROLES = [
   "companion",
 ];
 
-export function AlairAd() {
+export function WhiffAd() {
   const i = useWordCycle(ACTIVITIES.length, 1800);
 
   return (
@@ -42,7 +42,7 @@ export function AlairAd() {
           the anti–dating app movement
         </p>
         <p className="flex flex-wrap items-center gap-x-1.5 gap-y-1 font-serif text-sm text-forest sm:gap-x-2 sm:text-xl">
-          With alair, meet your
+          With whiff, meet your
           <span className="inline-flex items-center rounded-full bg-oat px-2.5 py-0.5 font-semibold ring-1 ring-forest/15 sm:px-3 sm:py-1">
             <AnimatedWord word={ACTIVITIES[i]} className="italic text-sienna" />
           </span>
@@ -53,7 +53,7 @@ export function AlairAd() {
         href="/"
         className="shrink-0 rounded-full bg-sienna px-6 py-2.5 font-serif text-sm italic tracking-wide text-oat transition-colors hover:bg-sienna-hover"
       >
-        meet alair →
+        meet whiff →
       </Link>
     </aside>
   );

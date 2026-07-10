@@ -1,6 +1,6 @@
-# alair
+# whiff
 
-Marketing site for **alair** — an AI for real-life connection. You talk to it, it
+Marketing site for **whiff** — an AI for real-life connection. You talk to it, it
 learns who you are and finds your people, then its AI talks to theirs to
 introduce you in real life. No profiles, no swiping. Invite-only, 25+.
 

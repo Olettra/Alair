@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export const dynamic = "force-static";
 
-const SITE_URL = "https://alair-ai.com";
+const SITE_URL = "https://whiff-ai.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();

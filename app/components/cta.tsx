@@ -108,7 +108,7 @@ export function SignUpCTA() {
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4" noValidate>
             <p className="text-[14px] md:text-[15px]">
-              alair is invite-only. leave your email to be considered for the
+              whiff is invite-only. leave your email to be considered for the
               next round.
             </p>
             <label htmlFor="signup-email" className="sr-only">

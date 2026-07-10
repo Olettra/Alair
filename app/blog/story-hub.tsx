@@ -58,9 +58,9 @@ export function StoryHub({ stories }: { stories: readonly StoryPreview[] }) {
         {/* sticky nav: home + persistent share CTA */}
         <div className="sticky top-0 z-30 border-b border-forest/10 bg-oat/70 backdrop-blur-md">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-            <Link href="/" aria-label="alair home" className="inline-flex">
+            <Link href="/" aria-label="whiff home" className="inline-flex">
               {/* eslint-disable-next-line @next/next/no-img-element -- tiny logo asset */}
-              <img src="/logo-mark.png" alt="alair" width={303} height={145} className="h-6 w-auto sm:h-7" />
+              <img src="/whiff-wordmark.png" alt="whiff" width={303} height={145} className="h-6 w-auto sm:h-7" />
             </Link>
             <button
               type="button"
@@ -136,7 +136,7 @@ export function StoryHub({ stories }: { stories: readonly StoryPreview[] }) {
                 Why Dating Apps Feel So Exhausting
               </h2>
               <p className="mt-2 max-w-xl text-pretty text-sm leading-relaxed text-forest/70 sm:text-base">
-                On why swiping starts to feel like work, and how alair trades
+                On why swiping starts to feel like work, and how whiff trades
                 it for less swiping and more real context.
               </p>
               <span className="mt-5 inline-flex items-center gap-2 font-serif text-sm italic text-sienna transition group-hover:text-sienna-hover">

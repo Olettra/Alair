@@ -7,7 +7,7 @@ import { StoryHub } from "./story-hub";
 
 const TITLE = "Dating App Stories, Fatigue, and Burnout";
 const DESCRIPTION =
-  "Read and share real dating app stories about burnout, ghosting, swiping fatigue, choice overload, bad dates, and why alair is rethinking modern connection.";
+  "Read and share real dating app stories about burnout, ghosting, swiping fatigue, choice overload, bad dates, and why whiff is rethinking modern connection.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -28,13 +28,13 @@ export const metadata: Metadata = {
     "dating app alternatives",
     "modern dating",
     "meet people without swiping",
-    "alair dating app alternative",
+    "whiff dating app alternative",
     "real-life connection",
   ],
   openGraph: {
     type: "website",
     url: BLOG_URL,
-    siteName: "alair",
+    siteName: "whiff",
     title: TITLE,
     description: DESCRIPTION,
     locale: "en_US",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
         url: OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Dating app story wall from alair",
+        alt: "Dating app story wall from whiff",
       },
     ],
   },
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     images: [
       {
         url: TWITTER_IMAGE,
-        alt: "Dating app story wall from alair",
+        alt: "Dating app story wall from whiff",
       },
     ],
   },

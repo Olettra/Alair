@@ -42,7 +42,7 @@ export async function POST(request: Request) {
 
   if (mode === "summary" && !messages.some((message) => message.role === "user")) {
     return Response.json(
-      { error: "Tell alair what happened before making a draft." },
+      { error: "Tell whiff what happened before making a draft." },
       { status: 400 },
     );
   }
@@ -76,7 +76,7 @@ export async function POST(request: Request) {
     console.error("Story AI proxy failed", error);
 
     return Response.json(
-      { error: "alair bot is taking a break. Try again in a moment." },
+      { error: "whiff bot is taking a break. Try again in a moment." },
       { status: 502 },
     );
   }

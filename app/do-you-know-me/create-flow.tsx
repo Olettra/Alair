@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { MATCH_PROMPTS } from "@/lib/match-prompts";
-import { AlairAd } from "./alair-ad";
+import { WhiffAd } from "./whiff-ad";
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -73,7 +73,7 @@ export function CreateFlow() {
         </p>
       </header>
 
-      <AlairAd />
+      <WhiffAd />
 
       <div className="mt-8 grid gap-8 lg:mt-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
         {/* left: the prompt bank */}

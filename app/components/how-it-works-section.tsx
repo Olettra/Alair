@@ -105,7 +105,7 @@ const ChatIcon = () => (
   </svg>
 );
 
-// a heart — alair learns what you love
+// a heart — whiff learns what you love
 const HeartIcon = () => (
   <svg {...iconProps}>
     <path d="M12 20s-7.5-4.9-10-9.8C.5 6.8 2.7 3.5 6 3c2.2-.3 4.3.9 6 3 1.7-2.1 3.8-3.3 6-3 3.3.5 5.5 3.8 4 7.2C19.5 15.1 12 20 12 20z" />
@@ -122,7 +122,7 @@ const PinIcon = () => (
 
 // The journey, three beats, labels only.
 const STEPS = [
-  { icon: <ChatIcon />, label: "You talk. alair always listens." },
+  { icon: <ChatIcon />, label: "You talk. whiff always listens." },
   { icon: <HeartIcon />, label: "It picks up on what you love." },
   { icon: <PinIcon />, label: "It finds someone into it too." },
 ];
@@ -143,7 +143,7 @@ export function HowItWorksSection() {
     <LayoutGroup id="how-it-works-reveal">
       <section
         id="how-it-works"
-        aria-label="What alair is and how it works"
+        aria-label="What whiff is and how it works"
         className="relative flex h-full flex-col items-center overflow-hidden border-t border-forest/10 px-6 pt-20 pb-12 md:px-10"
       >
         {/* statement + how it works fill the space above the invite */}
@@ -242,7 +242,7 @@ function HowBlock() {
         {...(reduce ? {} : reveal())}
         className="font-serif font-semibold text-forest text-[clamp(1.6rem,3.8vw,2.3rem)] leading-tight tracking-tight"
       >
-        You talk. alair does the rest.
+        You talk. whiff does the rest.
       </motion.h2>
 
       <div className="flex items-start justify-center gap-4 sm:gap-16">
@@ -286,7 +286,7 @@ function MobileHowBlock({ active }: { active: boolean }) {
         variants={mobileItem}
         className="font-serif font-semibold text-forest text-[clamp(1.6rem,3.8vw,2.3rem)] leading-tight tracking-tight"
       >
-        You talk. alair does the rest.
+        You talk. whiff does the rest.
       </motion.h2>
 
       <motion.div variants={mobileStagger} className="flex items-start justify-center gap-4">

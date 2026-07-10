@@ -23,24 +23,24 @@ const caveat = Caveat({
   variable: "--font-caveat",
 });
 
-const SITE_URL = "https://alair-ai.com";
-const SITE_NAME = "alair";
-const TITLE = "alair: AI-curated rooms for real-life connection";
+const SITE_URL = "https://whiff-ai.com";
+const SITE_NAME = "whiff";
+const TITLE = "whiff: AI-curated rooms for real-life connection";
 const DESCRIPTION =
-  "alair is an AI for real-life connection. Meet friends, community, run mates, or love without profiles or swiping, with space for neurodivergent adults.";
+  "whiff is an AI for real-life connection. Meet friends, community, run mates, or love without profiles or swiping, with space for neurodivergent adults.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: TITLE,
-    template: "%s · alair",
+    template: "%s · whiff",
   },
   description: DESCRIPTION,
   applicationName: SITE_NAME,
   generator: "Next.js",
   keywords: [
-    "alair",
-    "discover alair",
+    "whiff",
+    "discover whiff",
     "AI for real-life connection",
     "AI matchmaker",
     "AI that finds friends",
@@ -62,9 +62,9 @@ export const metadata: Metadata = {
     "ADHD friendly dating app",
     "social anxiety friendly dating",
   ],
-  authors: [{ name: "alair", url: SITE_URL }],
-  creator: "alair",
-  publisher: "alair",
+  authors: [{ name: "whiff", url: SITE_URL }],
+  creator: "whiff",
+  publisher: "whiff",
   category: "social",
   referrer: "origin-when-cross-origin",
   formatDetection: {
@@ -96,9 +96,9 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
-      { url: "/alair-icon.svg", type: "image/svg+xml" },
+      { url: "/whiff-icon.svg", type: "image/svg+xml" },
     ],
-    apple: [{ url: "/alair-icon.png", sizes: "512x512", type: "image/png" }],
+    apple: [{ url: "/whiff-icon.png", sizes: "512x512", type: "image/png" }],
   },
   manifest: "/manifest.webmanifest",
   robots: {
@@ -132,7 +132,7 @@ const jsonLd = {
       "@id": `${SITE_URL}#organization`,
       name: SITE_NAME,
       url: SITE_URL,
-      logo: `${SITE_URL}/alair-icon.png`,
+      logo: `${SITE_URL}/whiff-icon.png`,
       description: DESCRIPTION,
       slogan: "AI-curated rooms for real-life connection.",
       knowsAbout: [
@@ -145,8 +145,8 @@ const jsonLd = {
         "low-pressure ways to meet people without small talk",
       ],
       sameAs: [
-        "https://www.instagram.com/discover_alair/",
-        "https://www.tiktok.com/@discover_alair",
+        "https://www.instagram.com/discover_whiff/",
+        "https://www.tiktok.com/@discover_whiff",
       ],
     },
     {
@@ -161,7 +161,7 @@ const jsonLd = {
     {
       "@type": "Service",
       "@id": `${SITE_URL}#service`,
-      name: "alair",
+      name: "whiff",
       serviceType: "AI companion and matchmaking for real-life connection",
       description:
         "An AI you talk to that learns who you are, talks to other people's AI, and introduces you to the people who should be in your life: friends, a run mate, sometimes love, or a whole community. No profiles, no swiping, and no small talk to perform, which makes it a natural fit for autistic and neurodivergent adults. For adults 25 and up.",
