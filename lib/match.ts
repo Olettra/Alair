@@ -8,7 +8,7 @@ import { getMatchPrompt } from "./match-prompts";
 // email for the digital gift. The friend opens the shared link, proves the
 // magic word, and guesses. The reveal is answer-vs-guess.
 
-export const MATCH_COLLECTION_NAME = "alair_match_games";
+export const MATCH_COLLECTION_NAME = "whiff_match_games";
 
 export type MatchStatus = "open" | "answered";
 

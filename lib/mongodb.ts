@@ -1,7 +1,7 @@
 import { MongoClient, type Db } from "mongodb";
 
 declare global {
-  var alairMongoClientPromise: Promise<MongoClient> | undefined;
+  var whiffMongoClientPromise: Promise<MongoClient> | undefined;
 }
 
 function getMongoUri() {
@@ -17,12 +17,12 @@ function getMongoUri() {
 export async function getMongoDb(): Promise<Db> {
   const dbName = process.env.MONGODB_DB || "olettrasocials";
 
-  if (!global.alairMongoClientPromise) {
+  if (!global.whiffMongoClientPromise) {
     const client = new MongoClient(getMongoUri());
-    global.alairMongoClientPromise = client.connect();
+    global.whiffMongoClientPromise = client.connect();
   }
 
-  const client = await global.alairMongoClientPromise;
+  const client = await global.whiffMongoClientPromise;
 
   return client.db(dbName);
 }

@@ -6,9 +6,9 @@ from datetime import datetime, timezone
 
 from pymongo import ASCENDING, MongoClient, ReturnDocument
 
-# Collections (namespaced like the app's alair_match_games).
-COUNTER_COLLECTION = "alair_counters"
-BADGE_COLLECTION = "alair_founder_badges"
+# Collections (namespaced like the app's whiff_match_games).
+COUNTER_COLLECTION = "whiff_counters"
+BADGE_COLLECTION = "whiff_founder_badges"
 
 _client = None
 _indexes_ready = False

@@ -1,7 +1,7 @@
 import { getMongoDb } from "./mongodb";
 import type { StoryPreview } from "@/app/blog/data";
 
-export const STORY_COLLECTION_NAME = "alair_dating_app_stories";
+export const STORY_COLLECTION_NAME = "whiff_dating_app_stories";
 
 const STORY_SOURCE = "blog_story_wall";
 const DEFAULT_LABEL = "Dating app experience";

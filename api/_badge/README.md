@@ -72,8 +72,8 @@ No `BADGE_SERVICE_URL` needed — the Next route calls this function same-origin
 
 Two collections in the `olettrasocials` database:
 
-- `alair_counters` — `{ _id: "founderNumber", seq }`, the running founder count.
-- `alair_founder_badges` — one doc per badge: `founderNumber`, `founderLabel`,
+- `whiff_counters` — `{ _id: "founderNumber", seq }`, the running founder count.
+- `whiff_founder_badges` — one doc per badge: `founderNumber`, `founderLabel`,
   `hiddenCode` (unique), `email`, `badgeFile`, `sent`, `sentAt`, `createdAt`.
 
 ## Fonts
