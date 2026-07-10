@@ -340,8 +340,8 @@ function StatementBlock() {
         {...(reduce ? {} : reveal(0.14))}
         className="max-w-xl text-balance font-serif font-semibold text-forest/85 text-[clamp(0.95rem,4.5vw,1.35rem)] leading-snug sm:text-[clamp(0.8rem,2.3vw,1.35rem)]"
       >
-        Beacuse You don&rsquo;t need to match or force chemistry with a hundred people
-        to find one.
+        Because you don&rsquo;t need to match or force chemistry with a hundred people
+        to find the one.
       </motion.p>
 
       <motion.p

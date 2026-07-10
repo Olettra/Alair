@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
-// Shared Open Graph / Twitter image generator. Rendered to a static PNG at
-// build time (no request-time APIs), so it works with `output: "export"`.
+// Shared Open Graph / Twitter image generator. It avoids request-time APIs so
+// the social image remains deterministic at build time.
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -105,7 +105,7 @@ export default async function OgImage() {
           />
         </div>
 
-        {/* middle: eyebrow + headline */}
+        {/* middle: context line and headline */}
         <div style={{ display: "flex", flexDirection: "column", zIndex: 10 }}>
           <div
             style={{

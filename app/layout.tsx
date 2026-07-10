@@ -27,7 +27,7 @@ const SITE_URL = "https://alair-ai.com";
 const SITE_NAME = "alair";
 const TITLE = "alair: AI-curated rooms for real-life connection";
 const DESCRIPTION =
-  "alair is an AI for real-life connection. you just talk to it; it learns who you are and finds your people (friends, community, a run mate, sometimes love), then its AI talks to theirs to introduce you in real life. no profiles, no swiping, no small talk to perform, which makes it a natural fit for autistic and neurodivergent adults. 25+, invite-only.";
+  "alair is an AI for real-life connection. Meet friends, community, run mates, or love without profiles or swiping, with space for neurodivergent adults.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -44,6 +44,8 @@ export const metadata: Metadata = {
     "AI for real-life connection",
     "AI matchmaker",
     "AI that finds friends",
+    "dating app fatigue",
+    "dating app burnout",
     "make friends as an adult",
     "meet people without swiping",
     "alternative to dating apps",
@@ -190,6 +192,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${geist.variable} ${fraunces.variable} ${caveat.variable} h-full antialiased`}
     >
       <head>

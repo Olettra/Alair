@@ -6,12 +6,6 @@ import { ABOUT, FAQ } from "./seo-content";
 export default function Home() {
   return (
     <>
-      <a
-        href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:rounded-md focus:bg-forest focus:text-oat focus:px-3 focus:py-2"
-      >
-        Skip to content
-      </a>
       <Header />
       <main id="main" className="h-[100svh] overflow-hidden">
         {/* ── the statement, how it works, and the invite — one screen, no scroll ── */}

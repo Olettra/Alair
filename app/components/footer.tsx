@@ -4,6 +4,12 @@ export function Footer() {
   return (
     <footer className="fixed bottom-0 inset-x-0 z-40 px-6 py-3 text-center text-xs text-muted">
       <div className="flex items-center justify-center gap-3">
+        <Link href="/blog" className="hover:text-forest transition-colors">
+          blog
+        </Link>
+        <span aria-hidden="true" className="text-muted/50">
+          |
+        </span>
         <Link href="/privacy" className="hover:text-forest transition-colors">
           privacy policy
         </Link>

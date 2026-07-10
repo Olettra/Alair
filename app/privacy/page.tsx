@@ -13,7 +13,7 @@ export default function PrivacyPage() {
     <div className="min-h-[100svh] h-[100svh] overflow-y-auto bg-black text-white">
       <main className="mx-auto max-w-3xl px-6 py-16 text-center">
         <h1 className="text-3xl sm:text-4xl font-serif mb-2">Privacy Notice</h1>
-        <p className="text-sm text-white/60 mb-10">Last updated: May 22, 2026</p>
+        <p className="text-sm text-white/60 mb-10">Last updated: July 8, 2026</p>
 
         <section className="space-y-6 text-[15px] leading-relaxed text-white/90">
           <p>
@@ -82,6 +82,12 @@ export default function PrivacyPage() {
               you share with us about our Services or experiences.
             </li>
             <li>
+              <strong>Story submissions:</strong> dating app experiences you
+              choose to share with the story wall, an optional nickname, and an
+              optional email address if you want us to send a small digital
+              gift. We do not use that optional story email for marketing.
+            </li>
+            <li>
               <strong>Job application information:</strong> if you apply to
               join our team: name, contact info, resume, and any details you
               share with us.
@@ -145,6 +151,10 @@ export default function PrivacyPage() {
             <li>To create and manage your account and process payments.</li>
             <li>To verify identity and help keep our community safe.</li>
             <li>To send service messages, security alerts, and policy updates.</li>
+            <li>
+              To send a small digital gift if you choose to provide an email
+              with a story submission.
+            </li>
             <li>To invite you to experiences based on your interests.</li>
             <li>To improve and personalize the Services, including improving our matching models.</li>
             <li>To conduct analytics, research, and product development.</li>

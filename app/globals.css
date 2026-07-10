@@ -105,6 +105,166 @@ body {
   animation: fade-up 600ms ease-out both;
 }
 
+/* Story-wall card entrance. Uses `backwards` fill (not `both`), so once the
+   animation ends the element returns to its base state (opacity 1, no
+   transform) — the wall can never get stuck invisible, and hover transforms
+   still work afterward. Per-card delay is set inline for a staggered cascade. */
+@keyframes card-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-in {
+  animation: card-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+/* ---- alair chat: typing indicator + inline send spinner ---- */
+
+.typing-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  background: color-mix(in srgb, var(--color-sienna) 70%, transparent);
+  animation: typing-bounce 1.2s ease-in-out infinite;
+}
+.typing-dot:nth-child(2) {
+  animation-delay: 0.16s;
+}
+.typing-dot:nth-child(3) {
+  animation-delay: 0.32s;
+}
+
+@keyframes typing-bounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+.typing-spinner,
+.typing-spinner-sienna {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  animation: spin 0.7s linear infinite;
+}
+.typing-spinner {
+  border-color: color-mix(in srgb, var(--color-oat) 40%, transparent);
+  border-top-color: var(--color-oat);
+}
+.typing-spinner-sienna {
+  border-color: color-mix(in srgb, var(--color-sienna) 30%, transparent);
+  border-top-color: var(--color-sienna);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* One "look at me" burst: a shake struck like a bell and left to ring down —
+   tight, fast wobbles up front (with a little vertical hop), then wider/slower
+   ones as it settles. The deceleration lives in the keyframe spacing (dense
+   early, sparse late), so the animation itself runs linear. JS in the header
+   replays this on a random cadence; each play fires onAnimationEnd to schedule
+   the next. */
+@keyframes attention-wiggle {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+  6% {
+    transform: translateY(-3px) scale(1.09) rotate(-8deg);
+  }
+  12% {
+    transform: translateY(0) scale(1.08) rotate(8deg);
+  }
+  18% {
+    transform: translateY(-2px) scale(1.06) rotate(-6.5deg);
+  }
+  24% {
+    transform: translateY(0) scale(1.06) rotate(6.5deg);
+  } /* fast */
+  33% {
+    transform: translateY(-1px) scale(1.04) rotate(-4.5deg);
+  }
+  42% {
+    transform: translateY(0) scale(1.03) rotate(4.5deg);
+  }
+  52% {
+    transform: scale(1.02) rotate(-3deg);
+  } /* medium */
+  66% {
+    transform: scale(1.01) rotate(2deg);
+  }
+  80% {
+    transform: scale(1) rotate(-1.2deg);
+  }
+  92% {
+    transform: scale(1) rotate(0.6deg);
+  } /* slow, settling */
+  100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+
+/* A continuous radar-ping ring emanating from the pill — soft, low-key, always
+   alive so the button reads as interactive even between shake bursts. */
+@keyframes attention-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-sienna) 45%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 12px color-mix(in srgb, var(--color-sienna) 0%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+.attention-cta {
+  position: relative;
+  z-index: 2;
+  transform-origin: center;
+  box-shadow: 0 14px 32px -22px color-mix(in srgb, var(--color-sienna) 80%, black);
+}
+
+.attention-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  animation: attention-pulse 2.6s ease-out infinite;
+}
+
+.attention-wiggle {
+  animation: attention-wiggle 1.5s linear both;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .attention-wiggle,
+  .attention-cta::after {
+    animation: none;
+  }
+}
+
 @keyframes overlay-in {
   from { opacity: 0; }
   to   { opacity: 1; }
